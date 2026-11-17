@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>混剪pmv反差-剪辑手法与节奏对照手册</title>
+<meta name="description" content="混剪pmv反差是把慢节奏铺垫突然换成高密度卡点的剪辑手法，整理反差结构拆解、卡点对照表、素材筛选流程、成片复盘与常见问题，覆盖转场、音画对齐与情绪落差控制。">
+<meta name="keywords" content="混剪pmv反差">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314121f'/%3E%3Cpath d='M14 40 L26 18 L32 30 L40 22 L50 46 Z' fill='%23ff5c7a'/%3E%3Ccircle cx='20' cy='48' r='4' fill='%23ffd166'/%3E%3Crect x='44' y='14' width='6' height='6' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#14121f;
+  --ink-2:#262338;
+  --paper:#faf7f2;
+  --card:#ffffff;
+  --line:#e2ddd4;
+  --line-strong:#c9c2b5;
+  --brand:#e63956;
+  --brand-dark:#b32440;
+  --accent:#ffb703;
+  --accent-2:#3563e9;
+  --muted:#6b6577;
+  --muted-2:#8b8496;
+  --ok:#1f8a5b;
+  --warn:#c8792b;
+  --r-sm:6px;
+  --r-md:10px;
+  --r-lg:16px;
+  --sh-1:0 1px 2px rgba(20,18,31,.06),0 2px 8px rgba(20,18,31,.05);
+  --sh-2:0 4px 18px rgba(20,18,31,.09);
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;
+  --f-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  --f-num:"DIN Alternate","SF Mono","Consolas",monospace;
+  --sticky-h:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f-sans);font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.25em}
+li{margin-bottom:.35em}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:8px;top:8px}
+/* ---------- 吸顶区域 ---------- */
+.stick{position:sticky;top:0;z-index:100}
+.notice{
+  background:linear-gradient(90deg,var(--ink) 0 22%,var(--ink-2) 100%);
+  color:#f3efe7;font-size:13.5px;
+}
+.notice .wrap{display:flex;align-items:center;gap:14px;padding:7px 0;flex-wrap:wrap}
+.notice .tag{background:var(--brand);color:#fff;font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.06em;white-space:nowrap}
+.notice .txt{flex:1 1 320px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.notice .when{font-family:var(--f-num);color:var(--accent);white-space:nowrap}
+.notice a{color:#ffe08a}
+header.site{
+  background:rgba(250,247,242,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);box-shadow:var(--sh-1);
+}
+.header-in{display:flex;align-items:center;gap:20px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand .mark{width:38px;height:38px;flex:0 0 auto}
+.brand b{font-size:19px;letter-spacing:.02em}
+.brand small{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.14em}
+nav.main{flex:1 1 auto;min-width:0}
+nav.main ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.main a{display:block;padding:6px 10px;border-radius:var(--r-sm);font-size:14.5px;color:var(--ink-2)}
+nav.main a:hover,nav.main a[aria-current="true"]{background:#f0e9e0;color:var(--brand-dark);text-decoration:none}
+.head-tools{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.search{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:999px;background:#fff;padding:2px 2px 2px 12px}
+.search input{border:0;background:transparent;padding:6px 4px;font-size:14px;width:132px;font-family:inherit;color:var(--ink)}
+.search input:focus{outline:none}
+.search button{border:0;background:var(--ink);color:#fff;border-radius:999px;padding:7px 13px;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:600;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-dark)}
+.btn.ghost{border-color:var(--line-strong);background:#fff;color:var(--ink)}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line-strong);border-radius:var(--r-sm);padding:8px 12px;font-size:14px;cursor:pointer;font-family:inherit}
+#searchMsg{font-size:13px;color:var(--muted);padding:4px 2px;display:none}
+/* ---------- 首屏 ---------- */
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#f6f2ea;padding:var(--sp-7) 0 var(--sp-7);scroll-margin-top:var(--sticky-h)}
+.hero::after{content:"";position:absolute;inset:auto -10% -55% -10%;height:70%;background:radial-gradient(ellipse at 50% 0,rgba(230,57,86,.35),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-7);align-items:center;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.18em;color:var(--accent);border:1px solid rgba(255,183,3,.45);padding:3px 10px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-size:clamp(30px,4.6vw,50px);letter-spacing:.01em;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--brand);text-shadow:0 0 26px rgba(230,57,86,.4)}
+.hero p.lead{font-size:16.5px;color:#ddd6c9;max-width:34em}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero .cta .btn.ghost{background:transparent;color:#f6f2ea;border-color:rgba(246,242,234,.35)}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;border-top:1px solid rgba(246,242,234,.18);padding-top:16px}
+.hero-stats div b{font-family:var(--f-num);font-size:22px;color:var(--accent);display:block}
+.hero-stats div span{font-size:12.5px;color:#b7b0a4}
+.hero-art{position:relative;height:330px}
+.hero-art svg{width:100%;height:100%}
+/* ---------- 布局 ---------- */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:var(--sp-6);align-items:start;padding:var(--sp-7) 0}
+main#main{min-width:0}
+section.block{scroll-margin-top:var(--sticky-h);margin-bottom:var(--sp-7)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:20px;flex-wrap:wrap}
+.block-head h2{font-size:23px;letter-spacing:.01em}
+.block-head .note{font-size:12.5px;color:var(--muted)}
+.block-head .idx{font-family:var(--f-num);color:var(--brand);font-size:13px;margin-right:8px}
+/* 卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--sh-1);transition:transform .15s ease,box-shadow .15s ease;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.card .thumb{aspect-ratio:16/9;overflow:hidden;background:#ddd8ce}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:14px 15px 16px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card p{font-size:13.5px;color:var(--muted);margin:0 0 10px;line-height:1.65}
+.meta{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--muted-2);font-family:var(--f-num)}
+.chip{display:inline-block;font-size:12px;background:#f1ece3;color:var(--ink-2);border-radius:999px;padding:2px 9px;margin:0 6px 6px 0;line-height:1.6}
+.chip.hot{background:#fde8ec;color:var(--brand-dark)}
+/* 紧凑列表 */
+.tight{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.tight li{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:12px 4px;border-bottom:1px solid var(--line);margin:0}
+.tight li .d{font-family:var(--f-num);font-size:12.5px;color:var(--muted-2);padding-top:2px}
+.tight li a{font-size:15px;color:var(--ink);font-weight:600}
+.tight li a:hover{color:var(--brand-dark)}
+.tight li .s{font-size:12.5px;color:var(--muted-2);font-family:var(--f-num)}
+/* 频道网格 */
+.channels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.channels li a{display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 14px;color:var(--ink);transition:border-color .15s,transform .15s}
+.channels li a:hover{border-color:var(--brand);transform:translateY(-2px);text-decoration:none}
+.channels b{font-size:15px}
+.channels span{font-size:12.5px;color:var(--muted-2)}
+/* 深度解析 */
+.deep{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:var(--r-md);padding:var(--sp-5) var(--sp-5);box-shadow:var(--sh-1)}
+.deep h2{font-size:24px;margin-bottom:6px}
+.deep .lede{font-size:15px;color:var(--ink-2);border-bottom:1px dashed var(--line-strong);padding-bottom:14px;margin-bottom:18px}
+.deep h3{font-size:17.5px;margin:24px 0 8px;padding-left:12px;border-left:3px solid var(--accent)}
+.deep p{font-size:15.5px}
+.claim{background:#fff8ea;border:1px solid #f0ddb4;border-radius:var(--r-md);padding:14px 16px;margin:18px 0;font-size:15px}
+.claim b{color:var(--brand-dark)}
+table.cmp{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0 18px}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.cmp th{background:#f3eee5;font-size:13.5px}
+table.cmp td.n{font-family:var(--f-num);white-space:nowrap}
+/* 步骤 */
+.steps{counter-reset:st;list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.steps li{position:relative;padding:15px 16px 15px 58px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md)}
+.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:14px;top:14px;font-family:var(--f-num);font-size:15px;font-weight:700;color:var(--brand);border:2px solid var(--brand);width:32px;height:32px;display:grid;place-items:center;border-radius:50%}
+.steps b{display:block;font-size:15.5px;margin-bottom:3px}
+.steps span{font-size:13.8px;color:var(--muted)}
+/* 对照面板 */
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line-strong);border-radius:var(--r-md);overflow:hidden;background:var(--card)}
+.panel-grid>div{padding:16px 18px}
+.panel-grid>div:first-child{background:#f6f2ea;border-right:1px solid var(--line-strong)}
+.panel-grid h3{font-size:15.5px;margin-bottom:8px}
+.panel-grid ul{font-size:14px;margin:0;padding-left:1.1em;color:var(--ink-2)}
+/* FAQ */
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:10px;overflow:hidden}
+details.faq summary{cursor:pointer;padding:13px 16px;font-size:15.5px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-family:var(--f-num);color:var(--brand);font-size:19px;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq .a{padding:0 16px 15px;font-size:14.5px;color:var(--ink-2);border-top:1px dashed var(--line)}
+details.faq .a p{margin:.6em 0 0}
+/* 评论 */
+.comments{display:grid;gap:12px}
+.cmt{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 15px}
+.cmt .who{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:5px;flex-wrap:wrap}
+.cmt .who b{color:var(--ink);font-size:13.5px}
+.cmt .who .av{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;font-family:var(--f-num)}
+.cmt p{margin:0;font-size:14.5px}
+.cmt.tip{border-left:3px solid var(--warn)}
+.cmt.ok{border-left:3px solid var(--ok)}
+/* 标签索引 */
+.tagcloud{display:flex;flex-wrap:wrap;gap:9px}
+.tagcloud a{background:var(--card);border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--ink-2)}
+.tagcloud a:hover{background:var(--brand);color:#fff;border-color:var(--brand);text-decoration:none}
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line-strong)}
+.timeline li{position:relative;padding:0 0 16px 34px;margin:0}
+.timeline li::before{content:"";position:absolute;left:3px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--brand)}
+.timeline time{font-family:var(--f-num);font-size:12.5px;color:var(--brand-dark);display:block}
+.timeline b{font-size:15px}
+.timeline p{font-size:13.8px;color:var(--muted);margin:3px 0 0}
+/* 榜单 */
+.rank{list-style:none;padding:0;margin:0;counter-reset:rk;display:grid;gap:10px}
+.rank li{counter-increment:rk;display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:11px 14px}
+.rank li::before{content:counter(rk);font-family:var(--f-num);font-size:17px;font-weight:700;color:var(--brand)}
+.rank b{font-size:15px}
+.rank .sc{font-family:var(--f-num);font-size:13px;color:var(--muted);white-space:nowrap}
+/* 侧栏 */
+aside.rail{position:sticky;top:calc(var(--sticky-h) + 12px);display:grid;gap:18px;font-size:14px}
+.rail .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:15px 16px;box-shadow:var(--sh-1)}
+.rail .box h2{font-size:15px;margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.rail nav ul{list-style:none;padding:0;margin:0}
+.rail nav a{display:block;padding:6px 9px;border-radius:var(--r-sm);font-size:13.8px;color:var(--ink-2);border-left:3px solid transparent}
+.rail nav a:hover{background:#f4efe6;text-decoration:none}
+.rail nav a.active{background:#fde8ec;color:var(--brand-dark);border-left-color:var(--brand);font-weight:600}
+.rail .quote{font-size:13.8px;color:var(--ink-2);border-left:3px solid var(--accent);padding-left:11px;line-height:1.7}
+.rail .quote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted-2);margin-top:6px}
+/* 页尾 */
+footer.site{background:var(--ink);color:#c9c2b8;padding:var(--sp-7) 0 var(--sp-5);font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--sp-5)}
+footer.site h3{color:#f6f2ea;font-size:15px;margin-bottom:10px}
+footer.site ul{list-style:none;padding:0;margin:0}
+footer.site li{margin-bottom:7px}
+footer.site a{color:#c9c2b8}
+footer.site a:hover{color:var(--accent)}
+.foot-brand b{font-size:18px;color:#f6f2ea}
+.foot-brand p{font-size:13.5px;color:#9c958a;max-width:26em}
+.foot-bottom{border-top:1px solid #33303f;margin-top:var(--sp-6);padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#8e889a}
+#toTop{position:fixed;right:16px;bottom:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:18px;cursor:pointer;box-shadow:var(--sh-2);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:120}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translateY(-2px);background:var(--brand)}
+.hit{outline:3px solid var(--accent);outline-offset:2px;background:#fff6d8}
+/* 响应式 */
+@media (max-width:1000px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  aside.rail{position:static;grid-row:2;grid-template-columns:repeat(2,minmax(0,1fr));display:grid}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{height:240px;order:-1}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .channels{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  nav.main{flex-basis:100%;display:none;order:5}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;gap:2px;padding-top:8px;border-top:1px solid var(--line);margin-top:8px}
+  .header-in{flex-wrap:wrap}
+  .menu-btn{display:inline-block}
+  .search input{width:104px}
+  .head-tools{order:4}
+  .cards,.channels,.panel-grid,aside.rail{grid-template-columns:1fr}
+  .panel-grid>div:first-child{border-right:0;border-bottom:1px solid var(--line-strong)}
+  .tight li{grid-template-columns:minmax(0,1fr) auto;gap:6px}
+  .tight li .d{grid-column:1/-1;padding-top:0}
+  .hero{padding:var(--sp-6) 0}
+  .foot-grid{grid-template-columns:1fr}
+  #toTop{bottom:14px;right:12px;width:40px;height:40px}
+  .notice .txt{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover,.channels li a:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="stick">
+  <div class="notice" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="tag">混剪pmv反差</span>
+      <span class="txt">11 月 8 日更新卡点对照表第 4 版，补齐 96 BPM 与 128 BPM 两档切点数据；素材筛选清单新增 6 条帧级检查项。</span>
+      <span class="when">2026-11-08 09:20</span>
+      <a href="/#cmp-table">看对照表 →</a>
+    </div>
+  </div>
+  <header class="site">
+    <div class="wrap header-in">
+      <a class="brand" href="/#top" aria-label="混剪pmv反差 首页">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="12" fill="#14121f"/>
+          <path d="M12 42 L25 16 L32 30 L40 21 L52 48 Z" fill="#e63956"/>
+          <circle cx="19" cy="50" r="4" fill="#ffb703"/>
+          <rect x="46" y="12" width="7" height="7" fill="#ffb703"/>
+          <rect x="12" y="12" width="14" height="3" fill="#f6f2ea"/>
+        </svg>
+        <span><b>混剪pmv反差</b><small>节奏落差 · 结构对照</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">频道菜单</button>
+      <nav class="main" id="mainNav" aria-label="主题导航">
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#talk">用户评论</a></li>
+        </ul>
+      </nav>
+      <div class="head-tools">
+        <form class="search" id="searchForm" role="search" aria-label="站内查找">
+          <input id="q" type="search" placeholder="找条目 / 术语" aria-label="输入关键词查找页面内容" autocomplete="off">
+          <button type="submit">查找</button>
+        </form>
+        <a class="btn primary" href="/#guide">上手流程</a>
+      </div>
+      <div id="searchMsg" role="status" aria-live="polite"></div>
+    </div>
+  </header>
+</div>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">反差结构 · 卡点对照</span>
+      <h1>混剪pmv反差</h1>
+      <p class="lead">把 20 秒的慢推镜头压到 96 BPM 的呼吸点，再在鼓组落点用 4 帧一换的密集切换翻上去，落差全靠音频层和画面层的时间差撑住。这里记录具体的切点位置、素材筛选标准，以及 6 个常见翻车点。</p>
+      <div class="cta">
+        <a class="btn primary" href="/#deep">读深度解析</a>
+        <a class="btn ghost" href="/#cmp-table">打开卡点对照表</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>4 档</b><span>BPM 切点分档</span></div>
+        <div><b>37 条</b><span>拆解与条目</span></div>
+        <div><b>96 / 128</b><span>主力节奏区间</span></div>
+        <div><b>11-08</b><span>对照表更新</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 330" role="presentation">
+        <defs>
+          <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e63956"/><stop offset="1" stop-color="#ffb703"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="420" height="330" rx="16" fill="#1c1929"/>
+        <g opacity=".55" stroke="#3a3550" stroke-width="1">
+          <path d="M0 60H420M0 120H420M0 180H420M0 240H420M0 300H420"/>
+        </g>
+        <!-- 慢段波形 -->
+        <path d="M20 210 Q60 168 100 206 T180 198 T250 214" fill="none" stroke="#6b6577" stroke-width="3"/>
+        <path d="M20 250 Q60 236 100 248 T180 240 T250 252" fill="none" stroke="#4a4560" stroke-width="2"/>
+        <!-- 密集段柱 -->
+        <g fill="url(#gA)">
+          <rect x="268" y="60" width="7" height="120" rx="2"/>
+          <rect x="282" y="94" width="7" height="86" rx="2"/>
+          <rect x="296" y="40" width="7" height="140" rx="2"/>
+          <rect x="310" y="110" width="7" height="70" rx="2"/>
+          <rect x="324" y="66" width="7" height="114" rx="2"/>
+          <rect x="338" y="126" width="7" height="54" rx="2"/>
+          <rect x="352" y="30" width="7" height="150" rx="2"/>
+          <rect x="366" y="100" width="7" height="80" rx="2"/>
+          <rect x="380" y="56" width="7" height="124" rx="2"/>
+        </g>
+        <!-- 切割标尺 -->
+        <g stroke="#ffb703" stroke-width="2">
+          <path d="M262 268V292"/><path d="M300 268V292"/><path d="M348 268V292"/><path d="M392 268V292"/>
+        </g>
+        <text x="20" y="308" fill="#8b8496" font-size="11" font-family="monospace">00:00 – 00:18 铺陈</text>
+        <text x="268" y="308" fill="#ffb703" font-size="11" font-family="monospace">00:18 落点</text>
+        <text x="150" y="34" fill="#f6f2ea" font-size="13" font-family="monospace" letter-spacing="2">A / B 段对照</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+<main id="main">
+
+  <!-- 1 领域概览 -->
+  <section class="block" id="overview">
+    <div class="block-head">
+      <h2><span class="idx">01</span>领域概览：反差在剪辑里到底指什么</h2>
+      <span class="note">概念区分 · 与普通卡点片的差别</span>
+    </div>
+    <p>在 AMV 与 PMV 的剪辑语境里，反差通常指同一支片子里前后两段的视觉密度差异被刻意拉大：前段用长镜头、慢变速、低饱和或大留白，后段在同一段旋律里突然换成高频切换、强对比调色和逐帧对齐鼓点。判断一支片子是否属于这个路数，看三件事——切点密度有没有阶跃、音频层有没有独立于画面的推进、落点是否落在可被计数的拍子上。</p>
+    <p>它和「节奏踩点」不是一回事。普通卡点追求全片匀质对齐，每 8 或 16 拍换一次镜头；反差型作品会把 60% 的时长交给不到 5 个长镜头，剩下 40% 里塞进 40 到 80 个短切片。B 站账号 <b>@剪辑台老周</b> 在 2026-10-22 的直播回放里给过一个可核对的数：96 BPM 曲目下，反差段平均每 0.19 秒一切，慢段平均每 3.4 秒一切，密度比约 18:1。</p>
+    <p>素材来源也有讲究。真人拍摄的影视素材需要处理逐帧位移，游戏引擎录屏可以直接上抽帧；两种料混用时，色域和噪点必须先对齐，否则反差段一开，颗粒感立刻穿帮。</p>
+    <ul class="tight">
+      <li><span class="d">术语</span><a href="/#deep">慢起段与爆发段的时间配比</a><span class="s">配比</span></li>
+      <li><span class="d">术语</span><a href="/#guide">逐帧对齐与半帧偏移的区别</a><span class="s">对齐</span></li>
+      <li><span class="d">规则</span><a href="/#cmp-table">落点必须可被拍号整除吗</a><span class="s">拍号</span></li>
+    </ul>
+  </section>
+
+  <!-- 2 精选推荐 -->
+  <section class="block" id="picks">
+    <div class="block-head">
+      <h2><span class="idx">02</span>精选内容推荐</h2>
+      <span class="note">按结构类型分组 · 示例条目</span>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="thumb"><img src="https://picsum.photos/seed/pmvslowburn/640/360" width="640" height="360" loading="lazy" alt="慢推镜头配合低饱和蓝调的城市夜景画面"></div>
+        <div class="body">
+          <h3>慢推 18 秒后接 128 BPM 爆发</h3>
+          <p>代表作拆解：前段只用一个车厢窗外景，后段在 4 小节内植入 52 个切片，情绪落差靠光比而非变速。</p>
+          <div class="meta"><span>拆解</span><span>2026-11-06</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="https://picsum.photos/seed/pmvcuttable/640/360" width="640" height="360" loading="lazy" alt="剪辑时间线上密集排布的切片块与音频波形"></div>
+        <div class="body">
+          <h3>卡点对照表：96 BPM 逐拍切点</h3>
+          <p>把每小节拆成 4 份，标注哪些拍适合换镜、哪些拍只宜做缩放，附 12 条实测错误案例。</p>
+          <div class="meta"><span>工具</span><span>2026-11-08</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="https://picsum.photos/seed/pmvcolorlock/640/360" width="640" height="360" loading="lazy" alt="两段不同色温画面并排的调色前后对照"></div>
+        <div class="body">
+          <h3>混剪素材色域对齐三步法</h3>
+          <p>先统一黑位，再压高光，最后校正肤色。影视料与录屏混用时，第三步最容易出现断层。</p>
+          <div class="meta"><span>方法</span><span>2026-11-03</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="https://picsum.photos/seed/pmvtransition/640/360" width="640" height="360" loading="lazy" alt="运动模糊转场中拖尾的街灯光轨"></div>
+        <div class="body">
+          <h3>运动模糊转场在反转段的用法</h3>
+          <p>仅在后 40% 使用，前段出现会破坏铺垫。参数给到快门 1/50、方向与运镜一致两条硬约束。</p>
+          <div class="meta"><span>技法</span><span>2026-10-30</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="https://picsum.photos/seed/pmvclipbank/640/360" width="640" height="360" loading="lazy" alt="按情绪标签分类的素材库文件夹与缩略图墙"></div>
+        <div class="body">
+          <h3>素材库情绪标签命名规范</h3>
+          <p>建议用「静-暖-空镜」「动-冷-人物」两段式命名，检索时按第一段筛速度，第二段筛色调。</p>
+          <div class="meta"><span>流程</span><span>2026-10-28</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="https://picsum.photos/seed/pmvsoundlayer/640/360" width="640" height="360" loading="lazy" alt="多层音频轨叠加的混音界面与频率分布"></div>
+        <div class="body">
+          <h3>音频三轨法：原曲、打击层、环境底</h3>
+          <p>原曲定情绪，打击层定切点，环境底填空隙。第三层音量压到 -28 dB 左右，落点才会干净。</p>
+          <div class="meta"><span>音频</span><span>2026-10-26</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3 最新更新 -->
+  <section class="block" id="latest">
+    <div class="block-head">
+      <h2><span class="idx">03</span>最新更新</h2>
+      <span class="note">近 10 天内可核对的条目变更</span>
+    </div>
+    <ul class="tight">
+      <li><span class="d">11-08</span><a href="/#cmp-table">卡点对照表第 4 版上线，96 BPM 补 12 个切点</a><span class="s">修订</span></li>
+      <li><span class="d">11-06</span><a href="/#picks">新增「慢推 18 秒接 128 BPM 爆发」逐帧拆解</a><span class="s">新增</span></li>
+      <li><span class="d">11-05</span><a href="/#faq">FAQ 增加「落点能不能跨小节」一问</a><span class="s">补充</span></li>
+      <li><span class="d">11-02</span><a href="/#guide">筛选清单扩到 6 条帧级检查项</a><span class="s">扩写</span></li>
+      <li><span class="d">10-30</span><a href="/#picks">运动模糊转场条目补入快门参数</a><span class="s">修正</span></li>
+      <li><span class="d">10-27</span><a href="/#talk">收录 4 条对色域对齐步骤的反对意见</a><span class="s">收录</span></li>
+    </ul>
+  </section>
+
+  <!-- 4 分类入口 -->
+  <section class="block" id="channels">
+    <div class="block-head">
+      <h2><span class="idx">04</span>分类入口</h2>
+      <span class="note">10 个具体类别 · 点击直接跳板块</span>
+    </div>
+    <ul class="channels">
+      <li><a href="/#deep"><b>反差结构拆解</b><span>慢起与爆发的配比</span></a></li>
+      <li><a href="/#cmp-table"><b>卡点对照表</b><span>BPM 与切点密度</span></a></li>
+      <li><a href="/#guide"><b>素材筛选流程</b><span>帧级检查 6 项</span></a></li>
+      <li><a href="/#picks"><b>转场技法库</b><span>模糊、遮罩、抽帧</span></a></li>
+      <li><a href="/#deep"><b>音画对齐规则</b><span>半帧偏移与迟滞</span></a></li>
+      <li><a href="/#panel"><b>调色对比面板</b><span>色域与黑位</span></a></li>
+      <li><a href="/#faq"><b>常见问题</b><span>10 问短答</span></a></li>
+      <li><a href="/#timeline"><b>版本时间线</b><span>方法与数据变更</span></a></li>
+      <li><a href="/#rank"><b>成片待改进榜</b><span>按问题类型排序</span></a></li>
+      <li><a href="/#tags"><b>检索标签索引</b><span>按术语直达</span></a></li>
+    </ul>
+  </section>
+
+  <!-- 5 深度解析（唯一主体阅读区） -->
+  <section class="block deep" id="deep">
+    <h2>深度解析：反差的落差是被「数」出来的，不是被「感觉」出来的</h2>
+    <p class="lede">下面的判断都标了可核对依据：发布时间、BPM、切点计数、具体账号或版本号。同一支片子在两个平台的数据不同，所以先说清用的是哪份。</p>
+
+    <h3>慢段的时长下限：短于 6 秒几乎撑不起落差</h3>
+    <p>把 B 站 2026 年 10 月 1 日至 10 月 31 日的 46 支标注为反差向的 PMV 逐个计数，慢段（单镜头持续 1.5 秒以上）总时长低于 6 秒的有 19 支，评论区里出现「像普通踩点」的词频是其余 27 支的 2.3 倍。这组数字来自手动统计，样本只有 46 支，不足以当规律，但它指向一个可检验的说法：落差需要一段观众能明显感到「在等」的时间。</p>
+    <p>反向案例也存在。账号 <b>@Kite_剪</b> 在 2026-10-18 发布的《夜行》只给了 4.2 秒慢段，照样被大量转发，原因是它在慢段里保留了一条持续的手机快门音，制造了听觉上的倒数。这说明慢段可以用声音补时长，不必硬拉画面。</p>
+
+    <h3>落点的位置：96 BPM 下第 3 拍比第 1 拍更常被使用</h3>
+    <div class="claim"><b>可核对判断：</b>在 96 BPM 曲目里，反差段首个切点落在第 3 拍的比例更高，因为第 1 拍被用于完整的鼓组进入，画面同时切会显得挤。</div>
+    <p>抽样 22 支使用 96 BPM 原曲的成片，首个爆发切点出现在第 3 拍的有 13 支，第 1 拍 6 支，第 2 拍 3 支。第 1 拍的 6 支里有 4 支在切点前叠了 2 帧白闪作为过渡，等于把视觉起爆点往后推了两帧。反方意见来自 @剪辑台老周 2026-10-25 的帖子：「第 1 拍切更符合观众预期，推到第 3 拍是个人口味。」这条意见没有被数据推翻，也没有被支持。</p>
+
+    <h3 id="cmp-table">卡点对照表：四档 BPM 的切点密度</h3>
+    <p>下表把每档 BPM 换算成每拍毫秒数，并给出实测可用的最短切点长度。低于最短长度的切片在 60 帧素材上会出现明显抖动，因为可用的帧数不足两个。</p>
+    <table class="cmp">
+      <caption style="text-align:left;font-size:13px;color:#6b6577;padding-bottom:6px">按 30 fps 时间线换算，2026-11-08 第 4 版</caption>
+      <thead>
+        <tr><th>BPM</th><th>每拍毫秒</th><th>每小节</th><th>实测最短切点</th><th>密度建议</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="n">96</td><td class="n">625</td><td class="n">2500</td><td class="n">约 125 ms / 4 帧</td><td>每拍最多 1 切</td></tr>
+        <tr><td class="n">112</td><td class="n">536</td><td class="n">2143</td><td class="n">约 100 ms / 3 帧</td><td>每拍 1 至 2 切</td></tr>
+        <tr><td class="n">128</td><td class="n">469</td><td class="n">1875</td><td class="n">约 94 ms / 3 帧</td><td>每拍 2 切</td></tr>
+        <tr><td class="n">148</td><td class="n">405</td><td class="n">1622</td><td class="n">约 67 ms / 2 帧</td><td>每拍 2 至 3 切，需抽帧</td></tr>
+      </tbody>
+    </table>
+    <p>148 BPM 那行的「需抽帧」不是选配。30 fps 下 67 ms 只有 2 帧，直接切会看不清内容，只能当闪光片使用。改成 60 fps 时间线后可用帧翻倍，但成片导出仍要回到 30 fps，所以实际观感提升有限。</p>
+
+    <h3>说法差异：抽帧到 60 fps 是不是更好</h3>
+    <p>一方认为先做 60 fps 再降回 30 fps 能保留更多中间态，另一方认为这只是把模糊藏起来。可核对的部分是渲染耗时：同一段 24 秒的反差段，在相同机器上 30 fps 直剪导出 1 分 42 秒，60 fps 再降格导出 4 分 07 秒，多花 2 分 25 秒。至于观感差异，目前没有可复现的对照标准，属于转述层面的分歧。</p>
+    <p>还有第三种做法是只对爆发段用 60 fps，慢段保持 24 fps，导出时统一。这样能省一半渲染时间，但两段混合处必须手补 3 帧，否则会出现一次轻微顿挫。</p>
+
+    <h3>规则前后变化：2026 年下半年常见的两条修正</h3>
+    <p>四月以前流行「爆发段每切必转场」，转场类型不限。8 月之后，多个教程账号开始改口，理由是转场本身占帧，会把切点从鼓点推后。检查 9 月以后发布的 30 支成片，硬切占比从 54% 升到 78%，转场主要集中在段与段的接缝处。另一条修正是调色：早先把爆发段整体压暗提饱和，现在更多用局部对比拉高，因为整体压暗会让冷暖差变小。</p>
+    <p>两条修正都还没形成共识。9 月 12 日 @Kite_剪 仍在用整体压暗法，成片在收藏夹热度榜排到第 6，说明方法选择不算决定性因素。</p>
+
+    <h3>可拆解的判断：一支片子是否成立，看三个数</h3>
+    <p>慢段时长占全片比例、爆发段切点总数、首切点与最近鼓点的偏差帧数。三个数都在合理区间的片子里，评论区负面词频显著更低；偏差超过 2 帧的 11 支片子，有 7 支被指出「踩不准」。这不是审美判断，是可测的。建议自己剪完后先把这三个数量出来，再决定要不要重排。</p>
+  </section>
+
+  <!-- 6 体验指南 -->
+  <section class="block" id="guide">
+    <div class="block-head">
+      <h2><span class="idx">05</span>体验指南：从选曲到导出</h2>
+      <span class="note">编号步骤 · 每步含判断标准</span>
+    </div>
+    <ol class="steps">
+      <li><b>选曲并确定 BPM</b><span>用节拍检测工具测速，96 至 128 之间最适合做双段结构。测完手动数 8 小节核对，工具在变速曲上常偏 2 至 3 BPM。</span></li>
+      <li><b>标记慢段与爆发段的边界帧</b><span>边界放在鼓组进入前的半拍处，留出 8 至 12 帧过渡。边界太贴会让爆发段显得急。</span></li>
+      <li><b>按情绪标签取素材</b><span>慢段取「静-暖-空镜」，爆发段取「动-冷-人物」。两段素材分辨率必须一致，混用 1080p 与 4K 会在缩放时出现边缘锐度差。</span></li>
+      <li><b>先铺音频再剪画面</b><span>原曲、打击层、环境底三条轨先对齐，再动画面。画面先行的结果是每改一次切点就要重排音频。</span></li>
+      <li><b>爆发段逐拍填充</b><span>按对照表的密度建议切，每切完一小节看一眼波形是否对得上。超过两拍连续切同一场景会显得单调。</span></li>
+      <li><b>回看慢段是否还有信息</b><span>慢段占全片 50% 到 60% 时最容易空。至少要有一个可被描述的动作或光影变化，不能只是静止空镜。</span></li>
+      <li><b>导出并核对三个数</b><span>慢段比例、切点总数、首切偏差帧数。偏差超过 2 帧就回到第 4 步重对齐。</span></li>
+    </ol>
+  </section>
+
+  <!-- 7 对照面板 -->
+  <section class="block" id="panel">
+    <div class="block-head">
+      <h2><span class="idx">06</span>调色对照：慢段与爆发段该不该统一色温</h2>
+      <span class="note">对照面板 · 两种做法并列</span>
+    </div>
+    <div class="panel-grid">
+      <div>
+        <h3>做法 A：全片统一色温</h3>
+        <ul>
+          <li>慢段与爆发段用同一白平衡，靠光比和饱和制造落差。</li>
+          <li>优点：两段接缝干净，转场不会露馅。</li>
+          <li>代价：落差依赖运镜与切点，剪得不够狠就显得平。</li>
+          <li>适合素材来源统一、拍摄设备相同的项目。</li>
+        </ul>
+      </div>
+      <div>
+        <h3>做法 B：两段分色</h3>
+        <ul>
+          <li>慢段偏冷偏灰，爆发段拉到高对比暖色。</li>
+          <li>优点：情绪转折立刻可感，观众的注意力被颜色抓走。</li>
+          <li>代价：接缝处要补 6 至 10 帧过渡，否则像换了支片子。</li>
+          <li>适合影视料与录屏混用、原始色域差距大的项目。</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:14px">实测里两种做法都能出好片，差别在接缝处理的工作量。做法 B 平均要多花 40 分钟左右补过渡帧，做法 A 则要在切点上更用力。10 月 21 日发布的《回声》用了做法 B，接缝处叠了一层 8 帧的噪点渐变，观众几乎看不出断层。</p>
+  </section>
+
+  <!-- 8 FAQ -->
+  <section class="block" id="faq">
+    <div class="block-head">
+      <h2><span class="idx">07</span>常见问题</h2>
+      <span class="note">10 问 · 可直接核对</span>
+    </div>
+    <details class="faq"><summary>混剪pmv反差的慢段最少要多长？</summary><div class="a"><p>没有硬下限，但慢段短于 6 秒时，多数观众会把它当成前奏而不是铺垫。4 秒左右的慢段要靠持续的环境音或倒数音补，单靠画面很难让人感到「在等」。</p></div></details>
+    <details class="faq"><summary>落点能不能跨小节切？</summary><div class="a"><p>能，但跨小节切会把听觉上的段落感打散。若要用，建议只在最后一个爆发小节跨，且跨过去后的第一拍不做切点，留一拍呼吸。</p></div></details>
+    <details class="faq"><summary>30 fps 素材够不够做 128 BPM 反差段？</summary><div class="a"><p>够。128 BPM 每拍 469 毫秒，30 fps 下约 14 帧，每拍两切仍有 7 帧可用。真正吃帧的是 148 BPM 以上，那时每切只剩 2 帧，只能当闪光片。</p></div></details>
+    <details class="faq"><summary>影视料和游戏录屏混剪时先处理哪一步？</summary><div class="a"><p>先统一黑位和帧率。录屏常见 60 fps，影视料 24 fps，直接放进同一时间线会产生规律性顿挫。统一到 30 fps 后再处理色温和噪点。</p></div></details>
+    <details class="faq"><summary>打击层的音量该压多少？</summary><div class="a"><p>环境底压到 -28 dB 左右，打击层比原曲高 2 至 3 dB 即可。压得太狠切点会糊在音乐里，压得太高又会盖掉旋律，落点只剩「咚咚」声。</p></div></details>
+    <details class="faq"><summary>爆发段每切都加转场为什么不好看？</summary><div class="a"><p>转场本身要占 6 至 12 帧，切点会被推后，鼓点和画面就对不上了。硬切更贴合拍子，转场适合放在段与段的接缝，一支配 2 到 3 次足够。</p></div></details>
+    <details class="faq"><summary>反差段的调色一定要压暗吗？</summary><div class="a"><p>不一定。整体压暗会让冷暖差被吃掉，落差变小。更常见的做法是拉局部对比、提饱和，把最亮和最暗各推一点，中间调保持不动。</p></div></details>
+    <details class="faq"><summary>首切点偏差几帧算不合格？</summary><div class="a"><p>超过 2 帧就会被听出来。30 fps 下 2 帧是 67 毫秒，人耳对鼓点前后的容差大致在这个量级。剪辑时把波形放大到帧级再看，肉眼能分辨。</p></div></details>
+    <details class="faq"><summary>慢段只有静止空镜怎么办？</summary><div class="a"><p>给一个可描述的变化，比如窗外的车灯划过、桌面的灰尘被吹动、人物手指的一次收拢。静止 3 秒以上没有变化，观众会开始怀疑片子卡了。</p></div></details>
+    <details class="faq"><summary>反差的落差和反转是一回事吗？</summary><div class="a"><p>不是同一层。反转指叙事或情绪方向改变，反差指视觉密度与节奏的阶跃。一支片子可以只有反差没有叙事反转，也可以先反转再叠反差。</p></div></details>
+  </section>
+
+  <!-- 9 用户评论 -->
+  <section class="block" id="talk">
+    <div class="block-head">
+      <h2><span class="idx">08</span>用户评论</h2>
+      <span class="note">含反对意见 · 已标注指向条目</span>
+    </div>
+    <div class="comments">
+      <div class="cmt ok">
+        <div class="who"><span class="av" style="background:#1f8a5b">林</span><b>林间有灯</b><span>· 指向「卡点对照表」· 11-08</span></div>
+        <p>96 BPM 那行改成每拍最多 1 切之后，我重排了手上那支片子，确实不再糊了。之前按两切做，导出后每小节中间有一帧看不清，一直以为是导出设置的问题。</p>
+      </div>
+      <div class="cmt">
+        <div class="who"><span class="av" style="background:#3563e9">阿</span><b>阿茶不吃冰</b><span>· 指向「慢推 18 秒」· 11-06</span></div>
+        <p>那支慢推 18 秒的片子我看过三遍，前段其实有一个很轻的呼吸声在推，不是纯靠画面撑的。拆解里没提这一层，可能漏了。</p>
+      </div>
+      <div class="cmt tip">
+        <div class="who"><span class="av" style="background:#c8792b">半</span><b>半帧偏移</b><span>· 指向「首切点第 3 拍」· 11-05</span></div>
+        <p>第 3 拍更常被用这个说法我持保留意见。22 支样本里可能有 8 支是同一个人剪的，样本独立性不够。要下结论至少得按创作者去重。</p>
+      </div>
+      <div class="cmt">
+        <div class="who"><span class="av" style="background:#6b6577">老</span><b>老周剪辑台</b><span>· 指向「调色对照」· 11-04</span></div>
+        <p>做法 B 说的多花 40 分钟补过渡帧，我实际做下来接近一小时，因为接缝不只一处。耗时这块建议给个区间，别给单值。</p>
+      </div>
+      <div class="cmt">
+        <div class="who"><span class="av" style="background:#b32440">E</span><b>Echo_0921</b><span>· 指向「素材筛选流程」· 11-02</span></div>
+        <p>第 3 步要求两段素材分辨率一致，这条有点死。1080p 和 4K 混用只要在放大前做一次边缘柔化，边缘锐度差并不明显，我就是这么干的。</p>
+      </div>
+      <div class="cmt ok">
+        <div class="who"><span class="av" style="background:#1f8a5b">南</span><b>南墙不撞</b><span>· 指向「三个数」· 10-31</span></div>
+        <p>把三个数量出来再决定要不要重排，这个方法救了我一支卡了两周的片子。之前凭感觉改，改完还是不对，量完发现是首切偏差了 3 帧。</p>
+      </div>
+      <div class="cmt">
+        <div class="who"><span class="av" style="background:#3563e9">q</span><b>quicksilver</b><span>· 指向「抽帧到 60 fps」· 10-29</span></div>
+        <p>渲染多花两分半这段我认同。但说观感提升有限我觉得太保守了，至少在音乐节那段的金属反光上，60 fps 做出来的中间态明显更顺。可能跟素材本身有关。</p>
+      </div>
+      <div class="cmt tip">
+        <div class="who"><span class="av" style="background:#c8792b">夜</span><b>夜航船</b><span>· 指向「FAQ 打击层」· 10-27</span></div>
+        <p>-28 dB 这个数对安静的环境底适用，对带风声或雨声的素材就偏高了。我一般会按素材本身的底噪调，不能照搬。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 相关资讯 + 检索标签 -->
+  <section class="block" id="news">
+    <div class="block-head">
+      <h2><span class="idx">09</span>相关资讯与检索标签</h2>
+      <span class="note">事件只在此处出现一次</span>
+    </div>
+    <ul class="tight">
+      <li><span class="d">11-07</span><a href="/#deep">剪辑社区发布 2026 年 Q4 反差向成片抽样报告</a><span class="s">报告</span></li>
+      <li><span class="d">11-04</span><a href="/#guide">某节拍检测工具更新，新增变速曲手动校准入口</a><span class="s">工具</span></li>
+      <li><span class="d">10-31</span><a href="/#panel">一场线上剪辑对谈回放放出，主题是全片分色是否必要</a><span class="s">回放</span></li>
+      <li><span class="d">10-25</span><a href="/#guide">30 fps 与 60 fps 混合导出的兼容问题在论坛被集中讨论</a><span class="s">讨论</span></li>
+    </ul>
+    <div id="tags" style="margin-top:22px">
+      <h3 style="font-size:15.5px;margin-bottom:10px">检索标签索引</h3>
+      <div class="tagcloud">
+        <a href="/#deep">慢起段配比</a>
+        <a href="/#cmp-table">96 BPM 切点</a>
+        <a href="/#cmp-table">128 BPM 密度</a>
+        <a href="/#guide">逐帧对齐</a>
+        <a href="/#guide">素材筛选清单</a>
+        <a href="/#panel">分色接缝</a>
+        <a href="/#deep">首切偏差帧数</a>
+        <a href="/#picks">运动模糊转场</a>
+        <a href="/#picks">情绪标签命名</a>
+        <a href="/#faq">打击层音量</a>
+        <a href="/#faq">变速曲测速</a>
+        <a href="/#deep">三个数自查</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 榜单 -->
+  <section class="block" id="rank">
+    <div class="block-head">
+      <h2><span class="idx">10</span>成片待改进榜</h2>
+      <span class="note">按问题类型排序 · 示例评分</span>
+    </div>
+    <ol class="rank">
+      <li><b>慢段空镜无变化</b><span class="sc">慢段 7.2 s / 信息 0 处</span></li>
+      <li><b>首切偏差 3 帧以上</b><span class="sc">偏差 3 帧 / 96 BPM</span></li>
+      <li><b>爆发段转场过多</b><span class="sc">转场占 41% / 硬切 59%</span></li>
+      <li><b>色温断层未补过渡</b><span class="sc">接缝 4 处 / 补 1 处</span></li>
+      <li><b>打击层淹没原曲</b><span class="sc">高出 6 dB</span></li>
+      <li><b>素材分辨率混用未柔化</b><span class="sc">1080p 与 4K 各 12 段</span></li>
+    </ol>
+  </section>
+
+  <!-- 12 时间线 -->
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <h2><span class="idx">11</span>版本时间线：方法与数据的变更</h2>
+      <span class="note">可核对变更记录</span>
+    </div>
+    <ul class="timeline">
+      <li><time>2026-11-08</time><b>对照表第 4 版</b><p>补齐 96 BPM 与 128 BPM 两档切点数据，加入实测最短切点列。</p></li>
+      <li><time>2026-11-02</time><b>筛选清单扩至 6 条</b><p>新增黑位、帧率、边缘锐度三项帧级检查。</p></li>
+      <li><time>2026-10-26</time><b>音频三轨法成型</b><p>确定环境底 -28 dB 的基准值，并说明其适用边界。</p></li>
+      <li><time>2026-10-18</time><b>调色对照由单方案改双方案</b><p>补充做法 B 的接缝过渡工作量说明。</p></li>
+      <li><time>2026-10-12</time><b>首切点统计首次录入</b><p>22 支样本，按 BPM 分组统计首个切点位置。</p></li>
+    </ul>
+  </section>
+
+</main>
+
+<aside class="rail" aria-label="侧栏">
+  <div class="box">
+    <h2>板块导航</h2>
+    <nav aria-label="侧栏板块导航">
+      <ul>
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#picks">精选内容推荐</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#channels">分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#panel">调色对照</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#talk">用户评论</a></li>
+        <li><a href="/#rank">待改进榜</a></li>
+        <li><a href="/#timeline">版本时间线</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="box">
+    <h2>本期关键数</h2>
+    <ul style="list-style:none;padding:0;margin:0;font-size:13.8px">
+      <li>96 BPM 每拍 625 ms</li>
+      <li>128 BPM 每拍 469 ms</li>
+      <li>慢段下限约 6 秒</li>
+      <li>首切偏差容差 2 帧</li>
+      <li>环境底 -28 dB</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>创作者证言</h2>
+    <p class="quote">「我的慢段不是用来安静的，是用来数拍子的。观众在心里数到第 8 下，爆发才有地方落。」<cite>—— 剪辑账号 @Kite_剪，2026-10-18 发布说明</cite></p>
+  </div>
+</aside>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>混剪pmv反差</b>
+        <p>记录节奏落差的可核对依据：BPM、切点密度、偏差帧数，以及分歧双方的原始说法。</p>
+      </div>
+      <div>
+        <h3>方法内容</h3>
+        <ul>
+          <li><a href="/#deep">反差结构拆解</a></li>
+          <li><a href="/#guide">素材筛选流程</a></li>
+          <li><a href="/#panel">调色对照</a></li>
+          <li><a href="/#timeline">版本时间线</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>条目与数据</h3>
+        <ul>
+          <li><a href="/#cmp-table">卡点对照表</a></li>
+          <li><a href="/#picks">转场技法库</a></li>
+          <li><a href="/#rank">成片待改进榜</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>参与</h3>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#talk">用户评论</a></li>
+          <li><a href="/#tags">检索标签</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>页面内容中的作品、账号与数据为示例条目，用于展示结构，发布前请以实际核对结果替换。</span>
+      <span>内容更新：2026-11-08 · 对应「卡点对照表第 4 版」与「筛选清单 6 项」两项变更 · © 2026 混剪pmv反差</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到页面顶部">↑</button>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"混剪pmv反差",
+  "description":"混剪pmv反差是把慢节奏铺垫突然换成高密度卡点的剪辑手法，整理反差结构拆解、卡点对照表、素材筛选流程与常见问题。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"混剪pmv反差的慢段最少要多长？","acceptedAnswer":{"@type":"Answer","text":"没有硬下限，但慢段短于 6 秒时，多数观众会把它当成前奏而不是铺垫。4 秒左右的慢段要靠持续的环境音或倒数音补。"}},
+    {"@type":"Question","name":"落点能不能跨小节切？","acceptedAnswer":{"@type":"Answer","text":"能，但跨小节切会把听觉上的段落感打散。若要用，建议只在最后一个爆发小节跨，且跨过去后的第一拍不做切点。"}},
+    {"@type":"Question","name":"30 fps 素材够不够做 128 BPM 反差段？","acceptedAnswer":{"@type":"Answer","text":"够。128 BPM 每拍 469 毫秒，30 fps 下约 14 帧，每拍两切仍有 7 帧可用。真正吃帧的是 148 BPM 以上。"}},
+    {"@type":"Question","name":"影视料和游戏录屏混剪时先处理哪一步？","acceptedAnswer":{"@type":"Answer","text":"先统一黑位和帧率。录屏常见 60 fps，影视料 24 fps，直接放进同一时间线会产生规律性顿挫。"}},
+    {"@type":"Question","name":"打击层的音量该压多少？","acceptedAnswer":{"@type":"Answer","text":"环境底压到 -28 dB 左右，打击层比原曲高 2 至 3 dB 即可。压得太狠切点会糊在音乐里。"}},
+    {"@type":"Question","name":"爆发段每切都加转场为什么不好看？","acceptedAnswer":{"@type":"Answer","text":"转场本身要占 6 至 12 帧，切点会被推后，鼓点和画面就对不上。硬切更贴合拍子。"}},
+    {"@type":"Question","name":"反差段的调色一定要压暗吗？","acceptedAnswer":{"@type":"Answer","text":"不一定。整体压暗会让冷暖差被吃掉，落差变小。更常见的做法是拉局部对比、提饱和。"}},
+    {"@type":"Question","name":"首切点偏差几帧算不合格？","acceptedAnswer":{"@type":"Answer","text":"超过 2 帧就会被听出来。30 fps 下 2 帧是 67 毫秒，人耳对鼓点前后的容差大致在这个量级。"}},
+    {"@type":"Question","name":"慢段只有静止空镜怎么办？","acceptedAnswer":{"@type":"Answer","text":"给一个可描述的变化，比如窗外的车灯划过、桌面的灰尘被吹动。静止 3 秒以上没有变化，观众会开始怀疑片子卡了。"}},
+    {"@type":"Question","name":"反差的落差和反转是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"不是同一层。反转指叙事或情绪方向改变，反差指视觉密度与节奏的阶跃。"}}
+  ]
+}
+</script>
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.closest('a')&&window.innerWidth<=760){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&nav.classList.contains('open')){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.focus();
+      }
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // 滚动高亮
+  var railLinks=Array.prototype.slice.call(document.querySelectorAll('.rail nav a'));
+  var sections=railLinks.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          railLinks.forEach(function(a){
+            a.classList.toggle('active',a.getAttribute('href')==='/# '+en.target.id || a.getAttribute('href')==='/'+'#'+en.target.id);
+          });
+        }
+      });
+    },{rootMargin:'-140px 0px -60% 0px',threshold:0});
+    sections.forEach(function(s){io.observe(s);});
+  }
+
+  // 本地查找
+  var form=document.getElementById('searchForm');
+  var input=document.getElementById('q');
+  var msg=document.getElementById('searchMsg');
+  function clearHits(){
+    document.querySelectorAll('.hit').forEach(function(el){el.classList.remove('hit');});
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    clearHits();
+    var kw=input.value.trim();
+    if(!kw){
+      msg.style.display='block';
+      msg.textContent='请输入要查找的词，例如「切点」「慢段」「BPM」。';
+      return;
+    }
+    var main=document.getElementById('main');
+    var blocks=main.querySelectorAll('section.block');
+    var hits=[];
+    blocks.forEach(function(sec){
+      if(sec.textContent.indexOf(kw)!==-1){
+        hits.push(sec);
+        sec.classList.add('hit');
+      }
+    });
+    msg.style.display='block';
+    if(hits.length){
+      msg.textContent='找到 '+hits.length+' 个相关板块，已高亮显示。';
+      var first=hits[0];
+      var top=first.getBoundingClientRect().top+window.scrollY-120;
+      window.scrollTo({top:top,behavior:'smooth'});
+    }else{
+      msg.textContent='没有找到与「'+kw+'」匹配的板块，试试「卡点」「转场」「素材」或「BPM」。';
+    }
+  });
+  input.addEventListener('input',function(){if(!input.value.trim()){clearHits();msg.style.display='none';}});
+})();
+</script>
+</body>
+                                                                                      </html>
