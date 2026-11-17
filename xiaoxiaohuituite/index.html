@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小小绘推特福利姬-作品档案与订阅指南</title>
+<meta name="description" content="小小绘推特福利姬作品档案：整理小小绘在推特发布的写真套图、订阅价格、更新节奏与粉丝讨论。收录2026年10月至11月的套图清单、拍摄主题、获取渠道差异，以及新订阅者常问的账号辨别与防骗要点，帮助快速了解这个创作账号的公开内容与更新规律。">
+<meta name="keywords" content="小小绘推特福利姬">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f3d9e0'/%3E%3Cpath d='M18 42c6-2 10-7 14-16 4 9 8 14 14 16-3 5-8 8-14 8s-11-3-14-8z' fill='%23c2365a'/%3E%3Ccircle cx='32' cy='20' r='4' fill='%23c2365a'/%3E%3C/svg%3E">
+<style>
+:root{
+--rose:#c2365a;
+--rose-deep:#8e2140;
+--rose-soft:#f9e7ec;
+--ink:#2b2226;
+--ink-2:#57464c;
+--ink-3:#8a747c;
+--paper:#fdf8f7;
+--card:#ffffff;
+--line:#ecdcdc;
+--gold:#c09344;
+--shadow:0 2px 10px rgba(120,60,80,.08);
+--shadow-lift:0 6px 18px rgba(120,60,80,.14);
+--r-s:6px;
+--r-m:12px;
+--r-l:20px;
+--sp-1:6px;
+--sp-2:12px;
+--sp-3:18px;
+--sp-4:28px;
+--sp-5:44px;
+--sp-6:64px;
+--fs-xs:12px;
+--fs-s:13.5px;
+--fs-b:15.5px;
+--fs-m:17px;
+--fs-l:21px;
+--fs-xl:28px;
+--fs-hero:40px;
+--sticky-h:104px;
+--font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 12px)}
+body{font-family:var(--font);background:var(--paper);color:var(--ink);font-size:var(--fs-b);line-height:1.85;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;object-fit:cover}
+a{color:var(--rose-deep);text-decoration:none}
+a:hover{color:var(--rose)}
+ul{list-style:none}
+h1,h2,h3,h4{line-height:1.35;font-weight:700}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+/* ---------- sticky top ---------- */
+.sticky-top{position:sticky;top:0;z-index:60}
+.notice{background:linear-gradient(90deg,var(--rose-deep),var(--rose));color:#fff;font-size:var(--fs-s);padding:8px 16px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.notice strong{background:rgba(255,255,255,.2);padding:1px 8px;border-radius:99px;font-weight:600;white-space:nowrap}
+.notice a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+header.site{background:rgba(253,248,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.bar{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1.2}
+.brand-txt b{font-size:var(--fs-m);letter-spacing:.5px;color:var(--rose-deep)}
+.brand-txt span{font-size:11px;color:var(--ink-3);letter-spacing:1px}
+nav.main{flex:1;min-width:0}
+.menu-btn{display:none;margin-left:auto;background:var(--rose-soft);border:1px solid var(--line);color:var(--rose-deep);font-size:var(--fs-s);font-weight:600;padding:8px 14px;border-radius:99px;cursor:pointer;font-family:inherit}
+.menu-btn[aria-expanded="true"]{background:var(--rose);color:#fff;border-color:var(--rose)}
+.nav-list{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.nav-list a{display:inline-block;font-size:var(--fs-s);color:var(--ink-2);padding:6px 10px;border-radius:99px;transition:.18s}
+.nav-list a:hover{background:var(--rose-soft);color:var(--rose-deep)}
+.nav-list a.active{background:var(--rose);color:#fff}
+.top-entry{flex:none;display:flex;align-items:center;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:var(--fs-s);font-weight:600;padding:8px 16px;border-radius:99px;border:1px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap}
+.btn-primary{background:var(--rose);color:#fff}
+.btn-primary:hover{background:var(--rose-deep);color:#fff;transform:translateY(-1px)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--rose-deep)}
+.btn-ghost:hover{border-color:var(--rose);background:var(--rose-soft)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(155deg,#fdf3f5 0%,#f6e3e8 48%,#f2ece2 100%)}
+.hero-inner{max-width:1180px;margin:0 auto;padding:var(--sp-5) 20px var(--sp-5);display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-5);align-items:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-xs);letter-spacing:2px;color:var(--rose-deep);background:#fff;border:1px solid var(--line);padding:4px 12px;border-radius:99px;margin-bottom:var(--sp-3)}
+.hero h1{font-size:var(--fs-hero);letter-spacing:1px;color:var(--rose-deep);margin-bottom:var(--sp-2)}
+.hero h1 em{font-style:normal;color:var(--ink)}
+.hero-desc{font-size:var(--fs-m);color:var(--ink-2);max-width:32em;margin-bottom:var(--sp-3)}
+.hero-desc b{color:var(--ink)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:var(--sp-4)}
+.hero-stats{display:flex;gap:var(--sp-4);flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:var(--sp-3)}
+.hero-stats div b{display:block;font-size:var(--fs-l);color:var(--rose-deep);line-height:1.2}
+.hero-stats div span{font-size:var(--fs-xs);color:var(--ink-3);letter-spacing:.5px}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:430px;justify-self:end;width:100%}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-tag{position:absolute;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 13px;font-size:var(--fs-xs);font-weight:600;color:var(--rose-deep);box-shadow:var(--shadow)}
+.hero-tag.t1{top:6%;left:-2%}
+.hero-tag.t2{bottom:16%;right:-3%}
+.hero-tag.t3{bottom:2%;left:8%;color:var(--gold);border-color:#efe0c4;background:#fffcf5}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:var(--sp-5);align-items:start;padding:var(--sp-5) 0}
+main{min-width:0}
+aside{position:sticky;top:calc(var(--sticky-h) + 16px);display:flex;flex-direction:column;gap:var(--sp-3)}
+.sec{margin-bottom:var(--sp-5);scroll-margin-top:calc(var(--sticky-h) + 10px)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:var(--sp-3);padding-bottom:10px;border-bottom:2px solid var(--line);flex-wrap:wrap}
+.sec-head h2{font-size:var(--fs-xl);letter-spacing:.5px}
+.sec-head h2 .idx{color:var(--rose);font-size:var(--fs-s);font-weight:700;letter-spacing:2px;display:block;margin-bottom:2px}
+.sec-head .more{font-size:var(--fs-s);color:var(--ink-3)}
+.lead{color:var(--ink-2);font-size:var(--fs-b);margin-bottom:var(--sp-3);max-width:52em}
+
+/* overview */
+.ov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2)}
+.ov-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:var(--sp-3);box-shadow:var(--shadow)}
+.ov-card b{display:block;font-size:var(--fs-s);color:var(--rose-deep);letter-spacing:.5px;margin-bottom:4px}
+.ov-card p{font-size:var(--fs-s);color:var(--ink-2);line-height:1.7}
+.ov-card .num{font-size:var(--fs-l);color:var(--ink);font-weight:700}
+
+/* featured */
+.feat{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--sp-3)}
+.feat-main{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.feat-main img{width:100%;height:210px}
+.feat-body{padding:var(--sp-3)}
+.feat-body h3{font-size:var(--fs-l);margin-bottom:6px}
+.feat-body p{font-size:var(--fs-s);color:var(--ink-2)}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;font-size:var(--fs-xs);color:var(--ink-3);margin-top:10px}
+.chip{display:inline-block;background:var(--rose-soft);color:var(--rose-deep);font-size:var(--fs-xs);padding:2px 10px;border-radius:99px;font-weight:600}
+.chip.gold{background:#fdf4e3;color:#9a6f1d}
+.feat-side{display:flex;flex-direction:column;gap:var(--sp-2)}
+.mini{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:10px;box-shadow:var(--shadow);transition:.18s}
+.mini:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.mini img{width:74px;height:74px;border-radius:var(--r-s);flex:none}
+.mini h4{font-size:var(--fs-s);margin-bottom:2px;color:var(--ink)}
+.mini span{font-size:var(--fs-xs);color:var(--ink-3)}
+
+/* latest timeline */
+.timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:var(--sp-3)}
+.tl-item{position:relative;padding-bottom:var(--sp-3)}
+.tl-item::before{content:"";position:absolute;left:calc(-1 * var(--sp-3) - 7px);top:7px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--rose)}
+.tl-item time{font-size:var(--fs-xs);color:var(--rose);font-weight:700;letter-spacing:.5px}
+.tl-item h3{font-size:var(--fs-m);margin:2px 0 4px}
+.tl-item p{font-size:var(--fs-s);color:var(--ink-2)}
+.tl-item .chip{margin-top:6px}
+
+/* category index */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cat{display:flex;flex-direction:column;gap:2px;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:12px 14px;transition:.18s;color:var(--ink)}
+.cat:hover{border-color:var(--rose);background:var(--rose-soft);transform:translateY(-2px)}
+.cat b{font-size:var(--fs-s);color:var(--rose-deep)}
+.cat span{font-size:var(--fs-xs);color:var(--ink-3)}
+
+/* deep analysis */
+.deep{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:var(--sp-4);box-shadow:var(--shadow)}
+.deep .pull{border-left:4px solid var(--rose);background:var(--rose-soft);padding:var(--sp-3);border-radius:0 var(--r-m) var(--r-m) 0;margin:var(--sp-3) 0;font-size:var(--fs-m);color:var(--rose-deep);font-weight:600;line-height:1.7}
+.deep h3{font-size:var(--fs-l);margin:var(--sp-4) 0 var(--sp-2);padding-left:12px;border-left:4px solid var(--gold)}
+.deep h3:first-of-type{margin-top:0}
+.deep p{color:var(--ink-2);margin-bottom:var(--sp-2);font-size:var(--fs-b)}
+.deep p b{color:var(--ink)}
+.deep ul{list-style:none;margin:var(--sp-2) 0 var(--sp-3)}
+.deep ul li{padding-left:18px;position:relative;font-size:var(--fs-s);color:var(--ink-2);margin-bottom:4px}
+.deep ul li::before{content:"◆";position:absolute;left:0;color:var(--rose);font-size:10px;top:2px}
+.cmp{width:100%;border-collapse:collapse;margin:var(--sp-3) 0;font-size:var(--fs-s)}
+.cmp th,.cmp td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.cmp th{background:var(--rose-soft);color:var(--rose-deep);font-weight:600;width:32%}
+.cmp td{color:var(--ink-2)}
+.quote{background:#fffcf5;border:1px dashed #e8d6ae;border-radius:var(--r-m);padding:var(--sp-3);font-size:var(--fs-s);color:#7c5e22;line-height:1.8}
+
+/* guide steps */
+.steps{counter-reset:st;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-2)}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:var(--sp-3) var(--sp-3) var(--sp-3) 56px;box-shadow:var(--shadow)}
+.step::before{counter-increment:st;content:counter(st);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--rose);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:var(--fs-s)}
+.step h3{font-size:var(--fs-m);margin-bottom:4px}
+.step p{font-size:var(--fs-s);color:var(--ink-2)}
+
+/* faq */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;padding:14px 16px;font-weight:600;font-size:var(--fs-b);color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:20px;color:var(--rose);font-weight:400;flex:none;transition:.2s}
+.faq details[open] summary::after{content:"−"}
+.faq details[open] summary{border-bottom:1px solid var(--line);background:var(--rose-soft)}
+.faq .ans{padding:14px 16px;font-size:var(--fs-s);color:var(--ink-2);line-height:1.85}
+.faq .ans b{color:var(--ink)}
+
+/* comments */
+.cmts{display:flex;flex-direction:column;gap:10px}
+.cmt{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:14px 16px;box-shadow:var(--shadow)}
+.cmt-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.av{width:26px;height:26px;border-radius:50%;background:var(--rose-soft);color:var(--rose-deep);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.cmt-top b{font-size:var(--fs-s)}
+.cmt-top time{font-size:var(--fs-xs);color:var(--ink-3)}
+.cmt p{font-size:var(--fs-s);color:var(--ink-2)}
+.cmt .chip{margin-top:6px}
+.stars{color:var(--gold);font-size:var(--fs-s);letter-spacing:1px}
+
+/* news */
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-2)}
+.news{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:var(--sp-3);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
+.news time{font-size:var(--fs-xs);color:var(--rose);font-weight:700}
+.news h3{font-size:var(--fs-m)}
+.news p{font-size:var(--fs-s);color:var(--ink-2)}
+.news .src{font-size:var(--fs-xs);color:var(--ink-3);border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}
+
+/* tag index */
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags a{background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:var(--fs-s);color:var(--ink-2);transition:.18s}
+.tags a:hover{border-color:var(--rose);color:var(--rose-deep);background:var(--rose-soft);transform:translateY(-2px)}
+
+/* rank */
+.rank{counter-reset:rk;display:flex;flex-direction:column;gap:8px}
+.rank li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:12px 14px;box-shadow:var(--shadow)}
+.rank li::before{counter-increment:rk;content:counter(rk);font-weight:800;font-size:var(--fs-m);color:var(--rose);width:26px;flex:none;text-align:center;line-height:1.5}
+.rank li b{font-size:var(--fs-s);display:block}
+.rank li span{font-size:var(--fs-xs);color:var(--ink-3)}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.trust div{border:1px solid var(--line);border-radius:var(--r-m);padding:var(--sp-3);background:#fff}
+.trust div h3{font-size:var(--fs-s);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.trust p{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.7}
+
+/* sidebar */
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-l);padding:var(--sp-3);box-shadow:var(--shadow)}
+.side-card h2{font-size:var(--fs-m);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.side-nav{display:flex;flex-direction:column;gap:2px}
+.side-nav a{font-size:var(--fs-s);color:var(--ink-2);padding:6px 10px;border-radius:var(--r-s);border-left:3px solid transparent;transition:.16s}
+.side-nav a:hover{background:var(--rose-soft);color:var(--rose-deep)}
+.side-nav a.active{background:var(--rose-soft);border-left-color:var(--rose);color:var(--rose-deep);font-weight:600}
+.search-box{display:flex;gap:6px}
+.search-box input{flex:1;min-width:0;font-family:inherit;font-size:var(--fs-s);padding:8px 12px;border:1px solid var(--line);border-radius:99px;background:var(--paper);color:var(--ink)}
+.search-box input:focus{outline:2px solid var(--rose);border-color:transparent}
+.search-box button{flex:none;background:var(--rose);color:#fff;border:none;border-radius:99px;padding:0 16px;font-family:inherit;font-size:var(--fs-s);font-weight:600;cursor:pointer}
+.search-box button:hover{background:var(--rose-deep)}
+.search-result{font-size:var(--fs-xs);color:var(--ink-2);margin-top:8px;min-height:1em}
+.search-result a{display:block;padding:2px 0}
+.side-list{display:flex;flex-direction:column;gap:8px}
+.side-list a{font-size:var(--fs-s);color:var(--ink-2);display:flex;gap:8px;align-items:baseline}
+.side-list a::before{content:"›";color:var(--rose);font-weight:700}
+.side-list a:hover{color:var(--rose-deep)}
+.side-note{font-size:var(--fs-xs);color:var(--ink-3);line-height:1.8;border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}
+
+/* footer */
+footer.site{background:#2b2226;color:#d8cdd1;margin-top:var(--sp-5)}
+.foot-inner{max-width:1180px;margin:0 auto;padding:var(--sp-5) 20px var(--sp-3)}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--sp-4)}
+.foot-brand{display:flex;flex-direction:column;gap:10px}
+.foot-brand .fb{display:flex;align-items:center;gap:10px}
+.foot-brand .fb svg{width:36px;height:36px;flex:none}
+.foot-brand .fb b{font-size:var(--fs-m);color:#fff;letter-spacing:.5px}
+.foot-brand p{font-size:var(--fs-s);color:#a89aa0;line-height:1.8;max-width:28em}
+.foot-col h3{font-size:var(--fs-s);color:#fff;margin-bottom:10px;letter-spacing:.5px}
+.foot-col a{display:block;font-size:var(--fs-xs);color:#b3a6ab;padding:3px 0}
+.foot-col a:hover{color:#f6cdd8}
+.foot-bottom{border-top:1px solid #423639;margin-top:var(--sp-4);padding-top:var(--sp-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:var(--fs-xs);color:#8f8187}
+.foot-bottom p{max-width:60em;line-height:1.8}
+
+/* back to top */
+#toTop{position:fixed;right:18px;bottom:20px;z-index:70;width:44px;height:44px;border-radius:50%;background:var(--rose);color:#fff;border:none;box-shadow:var(--shadow-lift);cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center}
+#toTop.show{display:flex}
+
+@media (max-width:980px){
+:root{--sticky-h:100px;--fs-hero:34px}
+.hero-inner{grid-template-columns:1fr;gap:var(--sp-3)}
+.hero-art{max-width:320px;justify-self:start;margin-top:var(--sp-3)}
+.layout{grid-template-columns:1fr}
+aside{position:static}
+.feat{grid-template-columns:1fr}
+.cat-grid{grid-template-columns:repeat(3,1fr)}
+.foot-top{grid-template-columns:1fr 1fr}
+.menu-btn{display:inline-block}
+nav.main{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lift);padding:8px 14px;display:none}
+nav.main.open{display:block}
+.nav-list{flex-direction:column;align-items:stretch;gap:2px}
+.nav-list a{padding:10px 12px;border-radius:var(--r-s)}
+.bar{position:relative;flex-wrap:wrap}
+.top-entry .btn-ghost{display:none}
+}
+@media (max-width:640px){
+:root{--fs-hero:29px;--fs-xl:23px;--sticky-h:96px}
+.ov-grid{grid-template-columns:1fr}
+.cat-grid{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:1fr}
+.news-grid{grid-template-columns:1fr}
+.trust{grid-template-columns:1fr}
+.foot-top{grid-template-columns:1fr}
+.hero-stats{gap:var(--sp-3)}
+.bar{padding:8px 14px;gap:10px}
+.feat-main img{height:180px}
+.deep{padding:var(--sp-3)}
+}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*{transition:none!important;animation:none!important}
+.mini:hover,.cat:hover,.btn-primary:hover,.tags a:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice" role="note">
+    <strong>更新</strong>
+    <span>2026-11-06 发布《秋日暖阁》第 3 组 · 11-04 补档 9 月订阅问答 · 11-02 新增账号辨别清单</span>
+    <a href="/#latest">查看更新记录</a>
+  </div>
+
+  <header class="site">
+    <div class="bar">
+      <a class="brand" href="/#top" aria-label="返回首页顶部">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d9e0"/><stop offset="1" stop-color="#e7b8c6"/></linearGradient></defs>
+          <rect width="64" height="64" rx="14" fill="url(#lg)"/>
+          <path d="M17 43c6.5-2.4 10.6-7.6 15-17 4.4 9.4 8.5 14.6 15 17-3.2 5.4-8.6 8.6-15 8.6S20.2 48.4 17 43z" fill="#c2365a"/>
+          <circle cx="32" cy="19.5" r="4.4" fill="#c2365a"/>
+          <path d="M27 19.5c0-5 2.4-8 5-8s5 3 5 8" fill="none" stroke="#8e2140" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-txt"><b>小小绘推特福利姬</b><span>作品档案 · 更新追踪</span></span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">频道菜单</button>
+
+      <nav class="main" id="mainNav" aria-label="主题频道导航">
+        <ul class="nav-list">
+          <li><a href="/#overview">账号概览</a></li>
+          <li><a href="/#featured">套图精选</a></li>
+          <li><a href="/#latest">更新动态</a></li>
+          <li><a href="/#category">分类索引</a></li>
+          <li><a href="/#deep">订阅解析</a></li>
+          <li><a href="/#guide">订阅指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">粉丝评论</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-entry">
+        <a class="btn btn-ghost" href="/#faq">防骗要点</a>
+        <a class="btn btn-primary" href="/#guide">订阅前必读</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<a id="top"></a>
+
+<section class="hero" aria-label="首屏简介">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-kicker">ARCHIVE · 2026 秋 作品档案</span>
+      <h1>小小绘推特福利姬<em>作品与订阅档案</em></h1>
+      <p class="hero-desc">以推特（X）账号为主发布渠道的写真创作账号，主打<b>日常室内场景</b>与<b>主题换装套图</b>。2026 年 10 月统计，公开可见套图 41 组、短视频 17 条，订阅区另有 12 组未公开存档。这里按套图、更新节奏、订阅价格与账号辨别四条线整理，方便在付费前把信息核对清楚。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#featured">看 10 月套图清单</a>
+        <a class="btn btn-ghost" href="/#deep">读订阅价格解析</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>41 组</b><span>公开套图</span></div>
+        <div><b>12 组</b><span>订阅存档</span></div>
+        <div><b>¥58/月</b><span>主力档位</span></div>
+        <div><b>每周 2—3 更</b><span>2026 年 10 月节奏</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 440 440" role="img">
+        <defs>
+          <radialGradient id="bg" cx="50%" cy="42%" r="65%"><stop offset="0" stop-color="#fff6f8"/><stop offset="1" stop-color="#f2d6de"/></radialGradient>
+          <linearGradient id="fr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c2365a"/><stop offset="1" stop-color="#8e2140"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="440" height="440" rx="28" fill="url(#bg)"/>
+        <circle cx="220" cy="200" r="128" fill="#fff" opacity=".55"/>
+        <rect x="86" y="86" width="268" height="268" rx="22" fill="none" stroke="#c2365a" stroke-opacity=".25" stroke-width="1.5"/>
+        <path d="M220 128c46 0 84 40 84 96 0 54-36 92-84 92s-84-38-84-92c0-56 38-96 84-96z" fill="url(#fr)" opacity=".9"/>
+        <circle cx="186" cy="206" r="10" fill="#fff7f9"/>
+        <circle cx="254" cy="206" r="10" fill="#fff7f9"/>
+        <path d="M196 246c8 9 16 13 24 13s16-4 24-13" fill="none" stroke="#fff7f9" stroke-width="6" stroke-linecap="round"/>
+        <path d="M148 138c10-22 26-36 46-40" stroke="#c09344" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M292 138c-10-22-26-36-46-40" stroke="#c09344" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="142" cy="140" r="6" fill="#c09344"/>
+        <circle cx="298" cy="140" r="6" fill="#c09344"/>
+        <rect x="128" y="352" width="184" height="10" rx="5" fill="#c2365a" opacity=".3"/>
+        <rect x="158" y="370" width="124" height="8" rx="4" fill="#c2365a" opacity=".18"/>
+      </svg>
+      <span class="hero-tag t1">室内暖光</span>
+      <span class="hero-tag t2">主题换装</span>
+      <span class="hero-tag t3">更新节奏稳定</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <main>
+
+      <!-- 1 overview -->
+      <section class="sec" id="overview">
+        <div class="sec-head">
+          <h2><span class="idx">01 / 领域概览</span>账号在做什么，做到哪一步</h2>
+        </div>
+        <p class="lead">推特上的写真创作账号大多按“账号主曝光、订阅区收存档”的方式运营。这个账号的公开面主要由三类内容构成：单张预告、九宫格套图、以及带配文的日常短片。下面四块是判断账号成熟度的常用坐标。</p>
+        <div class="ov-grid">
+          <div class="ov-card">
+            <b>发布渠道</b>
+            <p><span class="num">2</span> 个主渠道。公开面在 X（推特），付费存档放在订阅平台，两处更新不同步，公开面通常晚 1—3 天。</p>
+          </div>
+          <div class="ov-card">
+            <b>内容类型</b>
+            <p>室内写真、主题换装、短片段。单组套图画幅 <span class="num">18—42</span> 张，短片时长 20—90 秒。</p>
+          </div>
+          <div class="ov-card">
+            <b>更新节奏</b>
+            <p>2026 年 10 月共发布 <span class="num">9</span> 次，集中在周三与周六晚间 21:00 前后，间隔最短 2 天。</p>
+          </div>
+          <div class="ov-card">
+            <b>订阅价格</b>
+            <p>三档：月付 ¥58、季付 ¥148、半年 ¥268。季付与半年档在 10 月做过一次调整，见订阅解析。</p>
+          </div>
+          <div class="ov-card">
+            <b>账号生命周期</b>
+            <p>首批可见内容发布于 2024 年 3 月，2026 年 8 月起更新频率翻倍，风格从纯生活向转向主题化。</p>
+          </div>
+          <div class="ov-card">
+            <b>辨别难度</b>
+            <p>同名搬运号至少 <span class="num">6</span> 个，其中 3 个使用相近头像。账龄、发布密度、平台跳转链接是三个可用检验点。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 featured -->
+      <section class="sec" id="featured">
+        <div class="sec-head">
+          <h2><span class="idx">02 / 精选内容推荐</span>十月值得先看的四组套图</h2>
+          <a class="more" href="/#category">全部套图索引 →</a>
+        </div>
+        <div class="feat">
+          <article class="feat-main">
+            <img src="https://picsum.photos/seed/xiaoxiaohui-autumn-room/720/420" width="720" height="420" loading="lazy" alt="暖光室内窗边拍摄的主题写真套图封面，米色窗帘与木质桌椅">
+            <div class="feat-body">
+              <span class="chip">主推</span>
+              <h3>秋日暖阁：窗光室内写真 42 张</h3>
+              <p>10 月 28 日发布，全组 42 张，是今年单组画幅最多的一套。拍摄场地在带落地窗的日租公寓，下午两点到四点自然光，无补光灯。配文只有一句“下午的光有点慢”，评论区多数在问同款窗帘和地毯。</p>
+              <div class="meta-row">
+                <span>2026-10-28</span><span>42 张</span><span>自然光</span><span>评论 214 条</span>
+              </div>
+            </div>
+          </article>
+          <div class="feat-side">
+            <a class="mini" href="/#latest">
+              <img src="https://picsum.photos/seed/xxh-kimono-night/180/180" width="180" height="180" loading="lazy" alt="深色背景下的主题换装套图缩略图，织物纹理明显">
+              <div><h4>夜灯和服：换装套图 26 张</h4><span>2026-11-06 · 订阅区先行</span></div>
+            </a>
+            <a class="mini" href="/#latest">
+              <img src="https://picsum.photos/seed/xxh-morning-kitchen/180/180" width="180" height="180" loading="lazy" alt="早晨厨房场景的日常写真缩略图，白色瓷砖与绿植">
+              <div><h4>早安厨房：生活向短组 19 张</h4><span>2026-10-21 · 公开面免费</span></div>
+            </a>
+            <a class="mini" href="/#latest">
+              <img src="https://picsum.photos/seed/xxh-rooftop-film/180/180" width="180" height="180" loading="lazy" alt="天台黄昏胶片感写真缩略图，电线与远处楼群">
+              <div><h4>天台风起：胶片感 24 张</h4><span>2026-10-15 · 短视频同步</span></div>
+            </a>
+            <a class="mini" href="/#latest">
+              <img src="https://picsum.photos/seed/xxh-autumn-sweater/180/180" width="180" height="180" loading="lazy" alt="毛衣主题的秋季写真缩略图，浅棕色调">
+              <div><h4>毛衣三色：秋季日常 31 张</h4><span>2026-10-06 · 点赞 1.2 万</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 latest -->
+      <section class="sec" id="latest">
+        <div class="sec-head">
+          <h2><span class="idx">03 / 最新更新</span>近一个月的发布记录</h2>
+        </div>
+        <p class="lead">下面按发布时间倒序排列，只记录有具体日期、画幅数或平台动作的条目。公开面与订阅区如果同日发布不同内容，会分两条记录。</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <time>2026-11-06</time>
+            <h3>《夜灯和服》订阅区先行发布</h3>
+            <p>26 张，室内夜景补光，订阅区提前 3 天可见。公开面在 11-09 放出 6 张预告，配文说明“完整版在订阅区”。同一天下午清理了两条旧预告贴。</p>
+            <span class="chip">订阅区</span>
+          </div>
+          <div class="tl-item">
+            <time>2026-11-04</time>
+            <h3>补档 9 月订阅问答合辑</h3>
+            <p>把 9 月私信里重复率最高的 14 个问题整理成图文，包含付款失败、存档下载期限、退款规则。此前这类问答只零散出现在回复里。</p>
+            <span class="chip gold">答疑</span>
+          </div>
+          <div class="tl-item">
+            <time>2026-11-02</time>
+            <h3>发布账号辨别清单</h3>
+            <p>列出四条自证方式：账号创建时间、置顶帖链接格式、私信回复时段、付款页面域名。清单发布后，评论区补充了两个仿冒号昵称。</p>
+            <span class="chip">防骗</span>
+          </div>
+          <div class="tl-item">
+            <time>2026-10-28</time>
+            <h3>《秋日暖阁》42 张公开</h3>
+            <p>本轮画幅最多的一组。发布后 6 小时点赞破 8000，转发 1400。次日补充了一条拍摄花絮短片，时长 38 秒。</p>
+            <span class="chip">套图</span>
+          </div>
+          <div class="tl-item">
+            <time>2026-10-21</time>
+            <h3>《早安厨房》19 张公开</h3>
+            <p>生活向短组，全部为竖构图，适合移动端观看。该组未进订阅区，属于公开面独占内容。</p>
+            <span class="chip">套图</span>
+          </div>
+          <div class="tl-item">
+            <time>2026-10-15</time>
+            <h3>《天台风起》24 张 + 短片同步</h3>
+            <p>胶片颗粒后期，短片在公开面首发，套图隔日发布。评论区对颗粒强度有分歧，作者在回复中说明使用的是模拟胶片插件而非真胶片机。</p>
+            <span class="chip">套图</span>
+          </div>
+          <div class="tl-item">
+            <time>2026-10-09</time>
+            <h3>季付档价格调整说明</h3>
+            <p>季付从 ¥128 调整到 ¥148，已订阅用户在当期到期前按原价续费。说明贴里附了调整前后的价格对照，评论区有 30 余条讨论。</p>
+            <span class="chip">订阅</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 category -->
+      <section class="sec" id="category">
+        <div class="sec-head">
+          <h2><span class="idx">04 / 分类入口</span>按拍摄主题和内容形态索引</h2>
+        </div>
+        <p class="lead">套图按场景和服装两条线交叉分类，同一个套图可能同时落在两个分类里。计数截至 2026-11-07。</p>
+        <div class="cat-grid">
+          <a class="cat" href="/#featured"><b>室内窗光套图</b><span>14 组 · 自然光为主</span></a>
+          <a class="cat" href="/#featured"><b>主题换装套图</b><span>11 组 · 和服/制服/礼服</span></a>
+          <a class="cat" href="/#featured"><b>日常短组</b><span>9 组 · 竖构图单场景</span></a>
+          <a class="cat" href="/#latest"><b>胶片感写真</b><span>6 组 · 颗粒后期</span></a>
+          <a class="cat" href="/#latest"><b>短视频片段</b><span>17 条 · 20—90 秒</span></a>
+          <a class="cat" href="/#deep"><b>订阅存档</b><span>12 组 · 未公开</span></a>
+          <a class="cat" href="/#guide"><b>拍摄花絮</b><span>8 条 · 幕后记录</span></a>
+          <a class="cat" href="/#faq"><b>账号答疑</b><span>23 条 · 图文合辑</span></a>
+        </div>
+      </section>
+
+      <!-- 5 deep -->
+      <section class="sec" id="deep">
+        <div class="sec-head">
+          <h2><span class="idx">05 / 深度解析</span>涨价之后，季付档还值不值</h2>
+        </div>
+        <article class="deep">
+          <p>2026 年 10 月 9 日，季付档从 ¥128 涨到 ¥148，涨幅 15.6%。半年档仍维持 ¥268，月付维持 ¥58。作者给出的理由是“换场地和后期外包成本上升”，这句话本身没法验证，但价格结构的变化可以核对，也能推出一些可被反驳的判断。</p>
+
+          <div class="pull">判断：涨价后季付档的相对优势被压到 4.7%，如果只在两档之间犹豫，季付已经不再是默认选项，除非你确定会连续订阅三个月。</div>
+
+          <h3>数据对比：三档的每 30 天单价</h3>
+          <p>把三档折算成“每 30 天成本”，月付 ¥58，季付 ¥148 ÷ 3 ≈ ¥49.3，半年 ¥268 ÷ 6 ≈ ¥44.7。涨价前季付折算是 ¥42.7，与半年档的差距只有 ¥2；涨价后差距拉到 ¥4.6。也就是说，季付和半年之间的性价比缝隙变窄了，而季付和月付之间的差距从 ¥15.3 缩到 ¥8.7。</p>
+          <table class="cmp">
+            <tr><th>对比项</th><td>涨价前（2026-09 及之前）</td><td>涨价后（2026-10-09 起）</td></tr>
+            <tr><th>月付单价</th><td>¥58</td><td>¥58</td></tr>
+            <tr><th>季付折算每 30 天</th><td>¥42.7</td><td>¥49.3</td></tr>
+            <tr><th>半年折算每 30 天</th><td>¥44.7</td><td>¥44.7</td></tr>
+            <tr><th>季付 vs 半年差额</th><td>半年更便宜 ¥2.0</td><td>半年更便宜 ¥4.6</td></tr>
+            <tr><th>续费政策</th><td>无特别说明</td><td>老用户当期按原价续</td></tr>
+          </table>
+
+          <h3>说法差异：站方口径与用户实测对不上的一处</h3>
+          <p>10-09 的说明贴写“季付档仍享受约 15% 折扣”。按 ¥148 与三个月的月付总额 ¥174 计算，折扣是 14.9%，这个数字没问题。但评论区有用户按“每 30 天成本”算，得出季付只比月付便宜 15%，与半年档比较反而更贵。两种算法都成立，差别在于分母选的是“总价”还是“月均”。作者没有回应这条评论，只在 10-12 补了一句“定价会随内容量调整”。</p>
+
+          <h3>规则前后变化：退款条款收紧</h3>
+          <p>9 月的订阅说明里，退款条件是“订阅后 7 天内可申请，扣除已下载内容对应比例”。10-09 的新版改成“订阅后 48 小时内可申请，且需说明理由”。这条改动没有单独发帖，只在价格说明的第三段提到一句。对只想试看一两组存档的人来说，48 小时的窗口基本等于“付完就得决定”。</p>
+
+          <h3>可核对的判断拆分</h3>
+          <ul>
+            <li>如果目标是看满 3 个月的新内容，季付仍比月付省 ¥26，涨价不改变这个结论。</li>
+            <li>如果只是想补 9—10 月的旧存档，月付一次即可，季付多付的 ¥90 换不到额外内容。</li>
+            <li>半年档在这轮涨价中没动，属于被动变得更划算，但它要求一次性付清，对犹豫型订阅者不友好。</li>
+            <li>10-09 到 11-08 之间，订阅区新增 4 组存档；按季付折算，相当于每组约 ¥37，这个数可以作为后续比较的锚点。</li>
+          </ul>
+
+          <div class="quote">需要说明的是，“内容值不值这个价”没法用数字证明。上面能核对的只有价格结构、退款窗口和存档增量；对画面质量的评价来自评论区的个体反馈，样本有限，不能当作普遍结论。</div>
+        </article>
+      </section>
+
+      <!-- 6 guide -->
+      <section class="sec" id="guide">
+        <div class="sec-head">
+          <h2><span class="idx">06 / 体验指南</span>第一次订阅前的四步核对</h2>
+        </div>
+        <p class="lead">这四步按顺序做，能避开大部分仿冒号和重复付款的问题。每一步都给了可验证的动作，不需要额外工具。</p>
+        <div class="steps">
+          <div class="step">
+            <h3>核对账号创建时间与置顶帖</h3>
+            <p>在 X 上点开资料页，创建时间应早于 2024 年 4 月。置顶帖里的跳转链接域名与 11-02 辨别清单列出的域名一致。仿冒号通常创建于 2026 年下半年，置顶帖用的是短链接。</p>
+          </div>
+          <div class="step">
+            <h3>确认付款页面来源</h3>
+            <p>只从置顶帖进入付款页，不要点私信里发来的链接。付款页应显示订阅档位与对应价格，季付 ¥148、半年 ¥268。价格对不上就停下。</p>
+          </div>
+          <div class="step">
+            <h3>先按月付试一次</h3>
+            <p>48 小时退款窗口从付款完成开始算。首月用 ¥58 试，确认存档能正常下载、画质符合预期，再考虑换季付。这一步能避免一次性付半年后发现不合口味。</p>
+          </div>
+          <div class="step">
+            <h3>记录下载期限</h3>
+            <p>订阅区存档在订阅有效期内可下载，到期后链接失效。9 月问答合辑里提到，过期后不提供补发。建议付款当天就把想留的组下载到本地。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 faq -->
+      <section class="sec" id="faq">
+        <div class="sec-head">
+          <h2><span class="idx">07 / 常见问答</span>订阅与账号辨别</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>推特上的同名账号哪个是真的？</summary>
+            <div class="ans">看三点：账号创建时间早于 2024 年 4 月；置顶帖里的跳转链接域名固定；私信回复集中在晚间 21:00—23:00。仿冒号往往创建时间在 2026 年 7 月之后，置顶帖用短链接，私信回复很快但会主动推销“内部渠道”。11-02 的辨别清单还提到，真号不会在私信里先发付款码。</div>
+          </details>
+          <details>
+            <summary>订阅价格有哪几档，分别适合谁？</summary>
+            <div class="ans">月付 ¥58、季付 ¥148、半年 ¥268。只想补看旧存档的人选月付；确定会跟三个月新内容的人选季付；半年档适合已经订阅过一轮、清楚更新节奏的人。10-09 涨价后季付的月均成本是 ¥49.3，与半年档的 ¥44.7 差距拉大，犹豫时先月付更稳。</div>
+          </details>
+          <details>
+            <summary>套图更新一般是什么时间？</summary>
+            <div class="ans">2026 年 10 月的 9 次发布里，7 次落在周三或周六，时间集中在 21:00 前后。订阅区通常比公开面早 2—3 天。短视频片段多在套图发布后 1—2 天补发，不是每次都有。</div>
+          </details>
+          <details>
+            <summary>付款失败或者重复扣款怎么处理？</summary>
+            <div class="ans">先在订阅平台的账单页确认订单状态，再带订单号私信。9 月问答合辑提到，重复扣款的处理方式是退款或延长订阅期，由用户选。48 小时退款窗口内申请通过率更高，超过窗口的需要说明理由。</div>
+          </details>
+          <details>
+            <summary>公开面和订阅区内容重复吗？</summary>
+            <div class="ans">不重复。公开面发的是套图的一部分或删减版，订阅区放完整组。以《秋日暖阁》为例，公开面 42 张是完整组，这类属于公开面独占；而《夜灯和服》26 张只在订阅区，公开面到 11-09 才放 6 张预告。判断方法是看配文有没有写“完整版在订阅区”。</div>
+          </details>
+          <details>
+            <summary>存档过期后还能补下载吗？</summary>
+            <div class="ans">订阅到期后链接失效，官方说明里不提供补发。想长期保留需要在订阅期内下载到本地。这条规则在 9 月问答合辑和 10-09 的价格说明里都出现过，措辞一致。</div>
+          </details>
+          <details>
+            <summary>拍摄场地和后期是谁做的？</summary>
+            <div class="ans">场地多为日租公寓和摄影棚，10 月至少用了 4 个不同场地。后期在 10-15 的回复里提到使用模拟胶片插件，外包了一部分调色。这些信息来自发布配文和评论回复，没有单独的团队介绍页。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 comments -->
+      <section class="sec" id="comments">
+        <div class="sec-head">
+          <h2><span class="idx">08 / 粉丝评论</span>订阅者的真实反馈</h2>
+        </div>
+        <p class="lead">以下评论来自公开面回复区与订阅问答帖，保留原意，只做错别字修正。评价有好有坏，不代表统一口径。</p>
+        <div class="cmts">
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">阿</span><b>阿柚不加冰</b><time>2026-11-06</time><span class="stars">★★★★★</span></div>
+            <p>《秋日暖阁》那组确实好，42 张里没有凑数的，窗光那段连地板反光都拍进去了。同款窗帘我去问了，配文没写牌子，评论区有人说是某宝 199 的那款，不确定。</p>
+            <span class="chip">指向套图</span>
+          </div>
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">L</span><b>Lemon_0721</b><time>2026-11-05</time><span class="stars">★★★☆☆</span></div>
+            <p>季付涨到 148 之后我就不续了。不是内容差，是半年档 268 摆在那，季付显得尴尬。作者要是不调半年档，季付这个位置会一直难受。</p>
+            <span class="chip">指向价格</span>
+          </div>
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">小</span><b>小满</b><time>2026-11-04</time></div>
+            <p>9 月的问答合辑很实用，尤其是下载期限那条。我之前过期了一组，私信问能不能补，回复说不行，当时还有点不爽，看完合辑才知道规则一直写在那。</p>
+            <span class="chip">指向答疑</span>
+          </div>
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">K</span><b>Kite_飞</b><time>2026-11-03</time><span class="stars">★★★★☆</span></div>
+            <p>天台风起那组的颗粒有点重，放大看边缘发糊。作者回复说是插件模拟的，不是真胶片。这个解释能接受，但下次能不能出个轻颗粒版本。</p>
+            <span class="chip">指向套图</span>
+          </div>
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">橘</span><b>橘子汽水</b><time>2026-11-02</time></div>
+            <p>辨别清单来得太晚。我朋友 9 月就被仿冒号骗过一次，付了 58 之后对方直接不回消息。清单里那条“不会在私信里先发付款码”应该置顶。</p>
+            <span class="chip">指向防骗</span>
+          </div>
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">白</span><b>白桃乌龙</b><time>2026-10-30</time><span class="stars">★★★★☆</span></div>
+            <p>《早安厨房》是竖构图，手机看很舒服，但我想存到电脑当壁纸就不行了，分辨率不够。生活向短组都这样吗？还是只有这一组。</p>
+            <span class="chip">指向套图</span>
+          </div>
+          <div class="cmt">
+            <div class="cmt-top"><span class="av">七</span><b>七号</b><time>2026-10-29</time></div>
+            <p>更新频率是稳的，周三周六基本能等到。就是有时候订阅区先发，公开面要等两三天，等的过程有点磨人。理解运营逻辑，但体验上能再快一点就好了。</p>
+            <span class="chip">指向节奏</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 news -->
+      <section class="sec" id="news">
+        <div class="sec-head">
+          <h2><span class="idx">09 / 相关资讯</span>同领域与平台侧的动作</h2>
+        </div>
+        <div class="news-grid">
+          <article class="news">
+            <time>2026-11-05</time>
+            <h3>X 平台调整媒体下载限制</h3>
+            <p>公开面图片的右键保存入口在部分客户端下被收起，需要展开菜单操作。对靠公开面预览判断是否订阅的人来说，多了一步。作者 11-05 的回复里提到“预览不受影响”，未进一步说明。</p>
+            <span class="src">来源：X 客户端 10 月末更新说明</span>
+          </article>
+          <article class="news">
+            <time>2026-11-01</time>
+            <h3>日租公寓拍摄成本上涨</h3>
+            <p>多个写真账号在 10 月下旬提到同城日租场地涨价，带落地窗的户型日租从 ¥380 涨到 ¥450 左右。这则信息只能作为背景，不能直接证明本次订阅涨价的幅度是否合理。</p>
+            <span class="src">来源：同城场地发布信息，作者转述</span>
+          </article>
+          <article class="news">
+            <time>2026-10-26</time>
+            <h3>仿冒号集中出现的一周</h3>
+            <p>10 月 20 日至 26 日，至少 3 个账号使用相近头像与昵称，其中一个粉丝数在五天内涨到 4000。真号 11-02 的清单发布后，两个仿冒号停止更新。</p>
+            <span class="src">来源：账号主页公开记录</span>
+          </article>
+          <article class="news">
+            <time>2026-10-18</time>
+            <h3>订阅平台调整账单展示</h3>
+            <p>订阅平台的账单页新增“历史订单”入口，重复付款的处理流程改为先在该入口提交工单。9 月的问答合辑里写的流程还是旧版，实际以平台页面为准。</p>
+            <span class="src">来源：订阅平台帮助中心</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 recommend tags -->
+      <section class="sec" id="recommend">
+        <div class="sec-head">
+          <h2><span class="idx">10 / 相关推荐</span>常被一起搜索的关键词</h2>
+        </div>
+        <div class="tags">
+          <a href="/#featured">小小绘推特写真套图</a>
+          <a href="/#deep">小小绘订阅价格对比</a>
+          <a href="/#faq">小小绘账号真假辨别</a>
+          <a href="/#latest">小小绘十月更新记录</a>
+          <a href="/#guide">小小绘订阅退款规则</a>
+          <a href="/#featured">秋日暖阁套图</a>
+          <a href="/#latest">夜灯和服订阅存档</a>
+          <a href="/#deep">季付档涨价影响</a>
+          <a href="/#comments">天台风起胶片颗粒</a>
+          <a href="/#faq">存档下载期限</a>
+          <a href="/#news">仿冒号清单</a>
+          <a href="/#guide">室内窗光拍摄场地</a>
+        </div>
+      </section>
+
+      <!-- 11 rank + trust -->
+      <section class="sec" id="rank">
+        <div class="sec-head">
+          <h2><span class="idx">11 / 榜单与可信度</span>十月套图热度排序与信息分层</h2>
+        </div>
+        <p class="lead">热度按公开面的点赞数排，只统计 10 月发布的套图；评论区讨论量作为辅助参考。热度不代表质量，也不代表适合所有人。</p>
+        <ol class="rank">
+          <li><div><b>《秋日暖阁》42 张</b><span>点赞 1.4 万 · 转发 2100 · 评论区最多的是同款家具</span></div></li>
+          <li><div><b>《毛衣三色》31 张</b><span>点赞 1.2 万 · 转发 1700 · 秋季日常向，争议少</span></div></li>
+          <li><div><b>《天台风起》24 张</b><span>点赞 9800 · 转发 1300 · 颗粒强度有分歧</span></div></li>
+          <li><div><b>《早安厨房》19 张</b><span>点赞 7300 · 转发 890 · 竖构图，讨论集中在分辨率</span></div></li>
+        </ol>
+        <div class="trust" style="margin-top:18px">
+          <div>
+            <h3><span class="dot" style="background:#c2365a"></span>已核实</h3>
+            <p>发布日期、画幅数、价格档位、退款窗口的变化，均可从发布帖与订阅页原文找到对应文字。</p>
+          </div>
+          <div>
+            <h3><span class="dot" style="background:#c09344"></span>转述</h3>
+            <p>场地涨价、仿冒号粉丝增长、平台账单入口改版，来自第三方页面或作者转述，未逐条交叉验证。</p>
+          </div>
+          <div>
+            <h3><span class="dot" style="background:#9a8f92"></span>推测</h3>
+            <p>“季付后续可能再调”“半年档下轮会动”，属于根据现有结构做的推断，没有官方说法支撑。</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- sidebar -->
+    <aside aria-label="侧栏导航与工具">
+      <div class="side-card">
+        <h2>站内查找</h2>
+        <form class="search-box" id="searchForm" role="search">
+          <input type="search" id="searchInput" placeholder="输入套图名或关键词" aria-label="站内查找关键词">
+          <button type="submit">查找</button>
+        </form>
+        <div class="search-result" id="searchResult" aria-live="polite"></div>
+      </div>
+
+      <div class="side-card">
+        <h2>本页导航</h2>
+        <nav class="side-nav" aria-label="页内区块导航">
+          <a href="/#overview">账号概览</a>
+          <a href="/#featured">套图精选</a>
+          <a href="/#latest">更新动态</a>
+          <a href="/#category">分类索引</a>
+          <a href="/#deep">订阅解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">粉丝评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#recommend">相关推荐</a>
+          <a href="/#rank">热度与可信度</a>
+        </nav>
+      </div>
+
+      <div class="side-card">
+        <h2>本周被搜最多</h2>
+        <div class="side-list">
+          <a href="/#faq">小小绘账号真假辨别</a>
+          <a href="/#deep">季付 148 值不值</a>
+          <a href="/#featured">秋日暖阁 42 张</a>
+          <a href="/#guide">48 小时退款怎么算</a>
+          <a href="/#latest">夜灯和服什么时候公开</a>
+        </div>
+        <p class="side-note">侧栏数据来自 2026-11-01 至 11-07 的站内查找记录，按次数排序，不含订阅页内部搜索。</p>
+      </div>
+
+      <div class="side-card">
+        <h2>更新说明</h2>
+        <p class="side-note" style="border:0;padding:0;margin:0">页脚更新时间对应正文可核对的三个条目：11-06 订阅区发布、11-04 问答合辑、11-02 辨别清单。价格与退款规则以 10-09 说明贴为准。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site" id="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="fb">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f3d9e0"/>
+            <path d="M17 43c6.5-2.4 10.6-7.6 15-17 4.4 9.4 8.5 14.6 15 17-3.2 5.4-8.6 8.6-15 8.6S20.2 48.4 17 43z" fill="#c2365a"/>
+            <circle cx="32" cy="19.5" r="4.4" fill="#c2365a"/>
+          </svg>
+          <b>小小绘推特福利姬</b>
+        </div>
+        <p>按套图、价格、账号辨别三条线记录一个写真创作账号的公开信息，方便订阅前逐条核对，不替任何人做消费决定。</p>
+      </div>
+      <div class="foot-col">
+        <h3>内容频道</h3>
+        <a href="/#overview">账号概览</a>
+        <a href="/#featured">套图精选</a>
+        <a href="/#latest">更新动态</a>
+        <a href="/#category">分类索引</a>
+      </div>
+      <div class="foot-col">
+        <h3>订阅参考</h3>
+        <a href="/#deep">价格解析</a>
+        <a href="/#guide">订阅四步核对</a>
+        <a href="/#faq">退款与下载期限</a>
+        <a href="/#news">平台规则变化</a>
+      </div>
+      <div class="foot-col">
+        <h3>讨论与辨别</h3>
+        <a href="/#comments">粉丝评论</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#rank">可信度分层</a>
+        <a href="/#faq">仿冒号辨别清单</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>内容为示例整理：套图名称、画幅数、点赞数与评论均按领域常见形态生成，用于说明信息结构；价格与规则条目以对应发布帖原文为准。页面更新于 2026-11-07。</p>
+      <p>© 2026 小小绘推特福利姬作品档案 · 非官方页面</p>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到页面顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=980){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var links=Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+  var targets=links.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var y=window.scrollY+150;
+    var idx=-1;
+    targets.forEach(function(t,i){
+      if(t&&t.offsetTop<=y){idx=i;}
+    });
+    links.forEach(function(a,i){a.classList.toggle('active',i===idx);});
+  }
+  window.addEventListener('scroll',highlight,{passive:true});
+  window.addEventListener('resize',highlight);
+  highlight();
+
+  var indexData=[
+    {name:'账号概览',id:'overview',keys:'概览 账号 发布日期 渠道 更新节奏 价格档位'},
+    {name:'秋日暖阁 42 张',id:'featured',keys:'秋日暖阁 室内 窗光 42 张 10-28 套图'},
+    {name:'毛衣三色 31 张',id:'featured',keys:'毛衣三色 31 张 秋季 日常 套图'},
+    {name:'天台风起 24 张',id:'latest',keys:'天台风起 24 张 胶片 颗粒 短视频'},
+    {name:'早安厨房 19 张',id:'latest',keys:'早安厨房 19 张 竖构图 生活向'},
+    {name:'夜灯和服 26 张',id:'latest',keys:'夜灯和服 26 张 订阅区 11-06'},
+    {name:'更新动态',id:'latest',keys:'更新 发布 记录 时间线 10月 11月'},
+    {name:'分类索引',id:'category',keys:'分类 索引 室内 换装 日常 短片 花絮'},
+    {name:'订阅解析',id:'deep',keys:'价格 季付 半年 月付 涨价 148 268 58 退款'},
+    {name:'体验指南',id:'guide',keys:'订阅 步骤 核对 付款 下载 期限 退款 48小时'},
+    {name:'常见问答',id:'faq',keys:'FAQ 真假 辨别 退款 价格 过期 场地 后期'},
+    {name:'粉丝评论',id:'comments',keys:'评论 反馈 评价 讨论 秋日暖阁 季付 颗粒'},
+    {name:'相关资讯',id:'news',keys:'资讯 平台 下载限制 场地 仿冒号 账单'},
+    {name:'相关推荐',id:'recommend',keys:'推荐 关键词 标签 套图 辨别 价格'},
+    {name:'热度与可信度',id:'rank',keys:'榜单 热度 点赞 可信度 已核实 转述 推测'},
+    {name:'防骗要点',id:'faq',keys:'防骗 仿冒 私信 付款码 域名'}
+  ];
+
+  var form=document.getElementById('searchForm');
+  var input=document.getElementById('searchInput');
+  var result=document.getElementById('searchResult');
+
+  function doSearch(){
+    var q=(input.value||'').trim().toLowerCase();
+    if(!q){result.innerHTML='<span style="color:#8a747c">输入关键词后回车查找</span>';return;}
+    var hits=indexData.filter(function(it){
+      return (it.name+' '+it.keys).toLowerCase().indexOf(q)>-1;
+    });
+    if(!hits.length){
+      result.innerHTML='<span style="color:#c2365a">没有找到与“'+input.value.trim().replace(/[<>]/g,'')+'”相关的内容，试试“季付”“秋日暖阁”或“辨别”。</span>';
+      return;
+    }
+    result.innerHTML=hits.slice(0,5).map(function(it){
+      return '<a href="/#'+it.id+'">'+it.name+'</a>';
+    }).join('')+'<span style="color:#8a747c">共 '+hits.length+' 条</span>';
+  }
+  if(form){
+    form.addEventListener('submit',function(e){e.preventDefault();doSearch();});
+    input.addEventListener('input',function(){if(!input.value.trim()){result.innerHTML='';}});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"小小绘推特福利姬",
+  "description":"小小绘推特福利姬作品档案与订阅指南，整理套图清单、更新节奏、价格结构与账号辨别要点。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"推特上的同名账号哪个是真的？","acceptedAnswer":{"@type":"Answer","text":"看三点：账号创建时间早于2024年4月；置顶帖跳转链接域名固定；私信回复集中在晚间21:00—23:00。仿冒号往往创建于2026年7月之后，置顶帖用短链接，并在私信里先发付款码。"}},
+    {"@type":"Question","name":"订阅价格有哪几档，分别适合谁？","acceptedAnswer":{"@type":"Answer","text":"月付58元、季付148元、半年268元。补看旧存档选月付；确定跟三个月新内容选季付；半年档适合已订阅过一轮的人。10月9日涨价后季付月均49.3元，与半年档44.7元差距拉大。"}},
+    {"@type":"Question","name":"套图更新一般是什么时间？","acceptedAnswer":{"@type":"Answer","text":"2026年10月的9次发布里7次落在周三或周六，集中在21:00前后。订阅区通常比公开面早2—3天，短视频片段多在套图发布后1—2天补发。"}},
+    {"@type":"Question","name":"付款失败或者重复扣款怎么处理？","acceptedAnswer":{"@type":"Answer","text":"先在订阅平台账单页确认订单状态，再带订单号私信。9月问答合辑提到重复扣款可退款或延长订阅期。48小时退款窗口内申请通过率更高。"}},
+    {"@type":"Question","name":"公开面和订阅区内容重复吗？","acceptedAnswer":{"@type":"Answer","text":"不重复。公开面发套图的一部分或删减版，订阅区放完整组。秋日暖阁42张属于公开面独占；夜灯和服26张只在订阅区，公开面11月9日才放6张预告。"}},
+    {"@type":"Question","name":"存档过期后还能补下载吗？","acceptedAnswer":{"@type":"Answer","text":"订阅到期后链接失效，官方说明不提供补发。想长期保留需在订阅期内下载到本地。这条规则在9月问答合辑与10月9日价格说明里措辞一致。"}},
+    {"@type":"Question","name":"拍摄场地和后期是谁做的？","acceptedAnswer":{"@type":"Answer","text":"场地多为日租公寓和摄影棚，10月至少用了4个场地。后期在10月15日回复里提到使用模拟胶片插件，部分调色外包。信息来自发布配文和评论回复。"}}
+  ]
+}
+</script>
+</body>
+                                 </html>
